@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="34.195.51.126" id="917d0e44-9f0e-4487-9655-9322621a23c3" keyPath="C:\Users\User\Desktop\webdeveloper.pem" port="22" nameFormat="DESCRIPTIVE" username="root" />
+      <sshConfig host="3.239.167.159" id="53f3d9c3-0592-4aa7-a4c1-7f34fb3e7154" keyPath="C:\Users\User\Desktop\webdeveloper.pem" port="22" nameFormat="DESCRIPTIVE" username="root" />
+    </configs>
+  </component>
+</project>

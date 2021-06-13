@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="117204c5-930f-4d76-b563-b3e9b9de07a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/EarlBrown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/_redirects" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/js/jquery-3.3.1.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/assets/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/css/2.ffda3d49.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/css/2.ffda3d49.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/css/main.2dd7029d.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/css/main.2dd7029d.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/2.cd6d1e2a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/2.cd6d1e2a.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/2.cd6d1e2a.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/3.fbf3f461.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/3.fbf3f461.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/main.d94f873e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/main.d94f873e.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/runtime-main.38c808d7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/js/runtime-main.38c808d7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/1.9a308c86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/10.bf2042f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/11.d6eacc0f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/2.b9c4ef4f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/3.58a87b24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/4.435bb8bc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/5.e9622644.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/6.0d5ab5ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/7.f4782831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/8.7b2cbeca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/9.a2517da9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Alchohol Addiction.b9c4ef4f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Anxiety.0d5ab5ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Depression.f4782831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Drug Addiction.9a308c86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Eating Disorder.58a87b24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/FuturaPT-Demi.4eb598c3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/FuturaPT-Demi.6b24cf57.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/FuturaPT-Demi.c4f0aecb.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/FuturaPT-Demi.edaa510a.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Heart Diseases.e9622644.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Insecurity.7b2cbeca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Mental Health.a2517da9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Smoking.d6eacc0f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Stress.bf2042f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/Weight Issues.435bb8bc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/article-img.1539bf06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/bookmark-hover.b9e2895d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/bookmark-icon.c0a19a6f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/check-icon.f19256c2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/closs-icon.89583ab3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/double-arrow.08722c15.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/down-arrow.b74b3743.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/facebook-icon.9e4a68aa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/facebook-icon2.d6e1a54f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/google-icon.9eb622dc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/instagram.f3888897.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/linkdin-icon.1a110a06.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/notification-icon.2e0b0bfa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/pre-login-banner-img.2891c76d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/pre-login-banner-img.3a8c43c4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/profile-img.acfa8adc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/rigth-arrow.075a620d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/search-icon.f8d33c74.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/share-hover.a17660e9.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/share-icon.61e8c798.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/stay-connected-img.840d460f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/thumb-up-hover.5bd9ee8a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/thumb-up-icon.8262aa23.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/F/static/media/twitter-icon.ba5c83b4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Admin/AdminStories.js/AdminStories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Admin/AdminStories.js/AdminStories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Admin/AdminUsers/AdminUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Admin/AdminUsers/AdminUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Article/FrontArticle/PopularArticle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Article/FrontArticle/PopularArticle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Community/Front/PopularCom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Community/Front/PopularCom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Login/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Login/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/ResetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Story/StoriesFront/PopularStories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Story/StoriesFront/PopularStories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Subscriber/AfterLoginModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Subscriber/AfterLoginModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Subscriber/AfterLoginSubscribe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Subscriber/AfterLoginSubscribe.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1oC9pm9EUMDNFeQBukn35gbR7AQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="117204c5-930f-4d76-b563-b3e9b9de07a0" name="Default Changelist" comment="" />
+      <created>1612779955360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612779955360</updated>
+      <workItem from="1612779962533" duration="551000" />
+      <workItem from="1615179113221" duration="2633000" />
+      <workItem from="1615265768674" duration="1942000" />
+      <workItem from="1615355136532" duration="49000" />
+      <workItem from="1615474661429" duration="749000" />
+      <workItem from="1615522796152" duration="693000" />
+      <workItem from="1615639379111" duration="2670000" />
+      <workItem from="1615998399266" duration="2155000" />
+      <workItem from="1616042753614" duration="2767000" />
+      <workItem from="1616074883037" duration="872000" />
+      <workItem from="1616168846463" duration="386000" />
+      <workItem from="1616222514804" duration="1134000" />
+      <workItem from="1616229157434" duration="2093000" />
+      <workItem from="1616245394321" duration="536000" />
+      <workItem from="1616295916212" duration="927000" />
+      <workItem from="1616397069122" duration="1160000" />
+      <workItem from="1616636304228" duration="52000" />
+      <workItem from="1616914394164" duration="1894000" />
+      <workItem from="1616937795924" duration="76000" />
+      <workItem from="1617521293655" duration="1505000" />
+      <workItem from="1617534576985" duration="1281000" />
+      <workItem from="1617600695772" duration="1529000" />
+      <workItem from="1617618214522" duration="1180000" />
+      <workItem from="1617622815407" duration="1063000" />
+      <workItem from="1617639794658" duration="641000" />
+      <workItem from="1618185754065" duration="1087000" />
+      <workItem from="1618320325797" duration="6559000" />
+      <workItem from="1618371621863" duration="2889000" />
+      <workItem from="1618412858525" duration="2772000" />
+      <workItem from="1618454565246" duration="1048000" />
+      <workItem from="1618568868680" duration="1049000" />
+      <workItem from="1619886275054" duration="412000" />
+      <workItem from="1620007429715" duration="196000" />
+      <workItem from="1620100573639" duration="1374000" />
+      <workItem from="1620103100437" duration="949000" />
+      <workItem from="1620180696919" duration="3805000" />
+      <workItem from="1620310430572" duration="1242000" />
+      <workItem from="1620357948425" duration="2336000" />
+      <workItem from="1620443047007" duration="773000" />
+      <workItem from="1620527558412" duration="2071000" />
+      <workItem from="1620565857219" duration="1246000" />
+      <workItem from="1620879170553" duration="746000" />
+      <workItem from="1621429493216" duration="1189000" />
+      <workItem from="1621566308355" duration="2107000" />
+      <workItem from="1621574280891" duration="669000" />
+      <workItem from="1621692393935" duration="198000" />
+      <workItem from="1621702724429" duration="538000" />
+      <workItem from="1621911791849" duration="779000" />
+      <workItem from="1622088060600" duration="1554000" />
+      <workItem from="1622096699558" duration="648000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

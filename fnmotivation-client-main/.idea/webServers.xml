@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="480263ca-fc62-4aa8-a577-407a15793d43" name="fnm-client">
+        <fileTransfer accessType="SFTP" host="54.204.131.209" port="22" sshConfigId="985675e3-e18c-4bdb-9e06-de3d306618d9" sshConfig="root@54.204.131.209:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="8aa15b61-9480-447d-a0e4-c5a67305e839" name="fnm-server">
+        <fileTransfer accessType="SFTP" host="34.195.51.126" port="22" sshConfigId="917d0e44-9f0e-4487-9655-9322621a23c3" sshConfig="root@34.195.51.126:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="b5f93d08-ecc6-472f-aba4-73ff3775e6bb" name="fnm-test">
+        <fileTransfer accessType="SFTP" host="3.239.167.159" port="22" sshConfigId="53f3d9c3-0592-4aa7-a4c1-7f34fb3e7154" sshConfig="root@3.239.167.159:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
