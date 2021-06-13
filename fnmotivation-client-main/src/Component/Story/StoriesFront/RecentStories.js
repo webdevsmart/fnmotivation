@@ -14,7 +14,7 @@ const RecentStories = ({ fetchFunc, fetchData, type }) => {
 
     const AllStoryWithUser = useCallback(  () => {
         setloader(true)
-        fetch('http://localhost:5000/getAllstoryWithUser?visible=' + fetchData)
+        fetch('/getAllstoryWithUser?visible=' + fetchData)
             .then(res => res.json())
             .then(data => {
                 setAllStories([...allStories, ...data])

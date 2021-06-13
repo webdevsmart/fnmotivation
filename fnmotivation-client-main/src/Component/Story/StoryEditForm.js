@@ -54,7 +54,7 @@ const StoryEditForm = ({handleClose, open, getComments}) => {
             return text.replace("'", '///')
         }
         const reply = change(data.comment)
-        fetch('http://localhost:5000/editStoryComment', {
+        fetch('/editStoryComment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

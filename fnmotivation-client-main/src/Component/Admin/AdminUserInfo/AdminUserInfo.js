@@ -15,7 +15,7 @@ const AdminAllUserInfo = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const getUesrs = useCallback(async () => {
-        await fetch(`http://localhost:5000/getParticularUser?id=` + u_id, {
+        await fetch(`/getParticularUser?id=` + u_id, {
             method: 'GET',
         })
             .then(res => {
@@ -52,7 +52,7 @@ const AdminAllUserInfo = () => {
                             {user.map(user =>
                                 <div key={user.user_id} className="profile-inner">
                                     <div className="image-holder">
-                                        <img src={`http://localhost:5000//${user.avatar}`} alt="user" className="img-fluid image-short-big" />
+                                        <img src={`//${user.avatar}`} alt="user" className="img-fluid image-short-big" />
                                     </div>
                                     <div className="profile-right">
                                         <div className="text-box">

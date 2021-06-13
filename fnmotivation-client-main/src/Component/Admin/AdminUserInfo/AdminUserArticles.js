@@ -18,7 +18,7 @@ const AdminUserArticles = () => {
 
     const getArticles = useCallback(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/getUserArticle/${u_id}?show=` + fetchData, {
+        fetch(`/getUserArticle/${u_id}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -40,7 +40,7 @@ const AdminUserArticles = () => {
 
     const getqueryArticle = useCallback(() => {
         setIsLoading(true)
-        fetch(`http://localhost:5000/getUserArticleQuery/${u_id}?search=` + search, {
+        fetch(`/getUserArticleQuery/${u_id}?search=` + search, {
             method: 'GET',
             headers: {
                 authorization: token

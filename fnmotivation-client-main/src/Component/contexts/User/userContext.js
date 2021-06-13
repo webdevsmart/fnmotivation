@@ -27,7 +27,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getParticularUserData = useCallback(  () => {
         setLoading(true)
-        fetch('http://localhost:5000/getParticularUser?id=' + userID, {
+        fetch('/getParticularUser?id=' + userID, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -52,7 +52,7 @@ export const ParicualrUserDataProvider = props => {
     const getAllPostsOfParticularUser = useCallback(  () => {
 
         setLoading(true)
-        fetch('http://localhost:5000/getAllPostsOfParticularUser?id=' + idData, {
+        fetch('/getAllPostsOfParticularUser?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -75,7 +75,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getAllArticleOfParticularUser = useCallback(  () => {
 
-        fetch('http://localhost:5000/getAllArticleOfParticularUser?id=' + idData)
+        fetch('/getAllArticleOfParticularUser?id=' + idData)
             .then(res => res.json())
             .then(data => {
                 setUserAllArticle([...userAllArticle, ...data.data])
@@ -98,7 +98,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getUserbookmarks = useCallback(  () => {
         setLoading(true)
-        fetch('http://localhost:5000/getUserbookmarks?id=' + idData, {
+        fetch('/getUserbookmarks?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -123,7 +123,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getUserFollower = useCallback(  () => {
         setLoading(true)
-        fetch('http://localhost:5000/getUserFollower?id=' + idData, {
+        fetch('/getUserFollower?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -145,7 +145,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getUserFollowing = useCallback(  () => {
         setLoading(true)
-        fetch('http://localhost:5000/getUserFollowing?id=' + idData, {
+        fetch('/getUserFollowing?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())

@@ -19,7 +19,7 @@ const SpecificUserFollwer = ({ follower,   fetchFunc, loading  }) => {
                         <tbody>
                             {follower.map((user, index) =>
                                 <tr key={user.user_id}>
-                                    <td><img src={`http://localhost:5000/${user.avatar}`} alt="avatar" className="img-fluid image-Short" /></td>
+                                    <td><img src={`/${user.avatar}`} alt="avatar" className="img-fluid image-Short" /></td>
                                     <td><a href={"/" + user.user_id + "/" + user.username} onClick={scrollToTop}>{user.fullname}</a></td>
                                     <td>@{user.username}</td>
                                 </tr>)}

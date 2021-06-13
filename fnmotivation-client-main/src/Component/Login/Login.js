@@ -25,7 +25,7 @@ const LoginUser = () => {
         setMsg(null)
         if (res.profileObj) {
             setPreloaderVisibale(true)
-            fetch(`http://localhost:5000/googleLogin?id=` + res.profileObj.googleId)
+            fetch(`/googleLogin?id=` + res.profileObj.googleId)
                 .then(res => res.json())
                 .then(data => {
                     if (data.error) {
@@ -52,7 +52,7 @@ const LoginUser = () => {
         setMsg(null)
         if (res.profile) {
             setPreloaderVisibale(true)
-            fetch(`http://localhost:5000/facebookLogin?id=` + res.profile.id)
+            fetch(`/facebookLogin?id=` + res.profile.id)
                 .then(res => res.json())
                 .then(data => {
                     if (data.error) {
@@ -83,7 +83,7 @@ const LoginUser = () => {
         setMsg(null)
         setErrorMessage([])
         setPreloaderVisibale(true)
-        fetch('http://localhost:5000/loginUser?email=' + data.email, {
+        fetch('/loginUser?email=' + data.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'Application/json',

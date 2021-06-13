@@ -24,7 +24,7 @@ const AdminArticles = () => {
 
     const countAricles = useCallback(() => {
         setLoad(true)
-        fetch(`http://localhost:5000/countArticles`, {
+        fetch(`/countArticles`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -66,7 +66,7 @@ const AdminArticles = () => {
 
     const getArticles = useCallback(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/allAdminArticle/${active}/${time}/${community}?show=` + fetchData, {
+        fetch(`/allAdminArticle/${active}/${time}/${community}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -97,7 +97,7 @@ const AdminArticles = () => {
 
     const getSearch = useCallback(() => {
         setLoading(true)
-        fetch('http://localhost:5000/searchArticle?search=' + search, {
+        fetch('/searchArticle?search=' + search, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -119,7 +119,7 @@ const AdminArticles = () => {
     const banArticles = (id) => {
         if (value == '0') {
             setBanLoader(id)
-            fetch(`http://localhost:5000/banArticles/${id}`, {
+            fetch(`/banArticles/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -136,7 +136,7 @@ const AdminArticles = () => {
                 })
         } else if (value == '1') {
             setBanLoader(id)
-            fetch(`http://localhost:5000/unBanArticles/${id}`, {
+            fetch(`/unBanArticles/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token

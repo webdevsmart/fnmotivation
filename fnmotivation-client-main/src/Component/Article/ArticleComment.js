@@ -48,7 +48,7 @@ const ArticleComment = ({ articleID, getNotifications }) => {
     const [commentLoad, setCommentLoad] = useState(true)
 
     const getArticleComments = useCallback(  () => {
-        fetch('http://localhost:5000/allArticleCommentsOfAPost?id=' + articleID, {
+        fetch('/allArticleCommentsOfAPost?id=' + articleID, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -78,7 +78,7 @@ const ArticleComment = ({ articleID, getNotifications }) => {
 
     const onSubmit = (data, e) => {
 
-        fetch('http://localhost:5000/postArticleComment', {
+        fetch('/postArticleComment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

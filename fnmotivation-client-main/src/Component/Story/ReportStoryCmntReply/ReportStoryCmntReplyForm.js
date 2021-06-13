@@ -14,7 +14,7 @@ const ReportStoryCmntReplyForm = (props) => {
     const onSubmit = async (data) => {
         const info = { from_user_id: userID, story_id: props.reply.storyID, reported_story_comment_reply_id: props.reply.replyID, report_msg: data.report_msg }
         setLoader(true)
-        await fetch('http://localhost:5000/storyReplyCommentReport', {
+        await fetch('/storyReplyCommentReport', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

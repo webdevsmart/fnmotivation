@@ -6,7 +6,7 @@ const SideArticle = () => {
     const [allArticle, setAllArticle] = useState([])
     const getAllArticle = useCallback(() => {
         setLoad(true)
-        fetch('http://localhost:5000/getAllArticle?show=' + 0)
+        fetch('/getAllArticle?show=' + 0)
             .then(res => res.json())
             .then(data => {
                 setAllArticle([...allArticle, ...data])

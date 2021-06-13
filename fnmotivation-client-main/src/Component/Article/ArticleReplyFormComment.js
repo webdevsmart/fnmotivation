@@ -29,7 +29,7 @@ const ArticleReplyFormComment = ({ac_id, postID, getArticleComments, getNotifica
             return text.replace("'", '///')
         }
         const reply = change(data.replyArticleComment)
-        fetch('http://localhost:5000/replyArticleCommentPost', {
+        fetch('/replyArticleCommentPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

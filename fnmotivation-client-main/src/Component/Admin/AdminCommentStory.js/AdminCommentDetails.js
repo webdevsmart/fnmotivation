@@ -18,7 +18,7 @@ const AdminCommentDetails = (props) => {
         console.log()
         if (value == '0') {
             setBanLoader(id)
-            fetch(`http://localhost:5000/banComment/${id}`, {
+            fetch(`/banComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -34,7 +34,7 @@ const AdminCommentDetails = (props) => {
         } else if (value == '1') {
 
             setBanLoader(id)
-            fetch(`http://localhost:5000/unBanComment/${id}`, {
+            fetch(`/unBanComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -57,7 +57,7 @@ const AdminCommentDetails = (props) => {
             <div className="article-comments-reply">
 
                 <div className="image-holder">
-                    <img src={`http://localhost:5000/${props.avatar}`} alt="avatar" className="img-fluid" />
+                    <img src={`/${props.avatar}`} alt="avatar" className="img-fluid" />
                 </div>
 
                 <div className="text-box" id="txt">

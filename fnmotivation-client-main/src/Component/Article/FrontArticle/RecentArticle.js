@@ -14,7 +14,7 @@ const RecentArticle = ({ fetchFunc, fetchData, type }) => {
 
     const getAllArticle = useCallback(  () => {
         setloader(true)
-        fetch('http://localhost:5000/getAllArticleForAll?show=' + fetchData)
+        fetch('/getAllArticleForAll?show=' + fetchData)
             .then(res => res.json())
             .then(data => {
                 setAllArticle([...allArticle, ...data])

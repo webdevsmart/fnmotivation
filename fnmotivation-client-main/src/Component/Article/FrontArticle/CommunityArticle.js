@@ -18,7 +18,7 @@ const CommunityArticle = ({ fetchFunc, fetchData, type }) => {
 
     const getAllArticle = useCallback(  () => {
         setloader(true)
-        fetch('http://localhost:5000/getAllCommunityArticle?id=' + IDdata, {
+        fetch('/getAllCommunityArticle?id=' + IDdata, {
             method: 'GET',
             headers: {
                 authorization: token

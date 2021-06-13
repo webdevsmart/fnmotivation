@@ -11,7 +11,7 @@ const UserVerify = () => {
 
     const onSubmit = (data, e) => {
         setPreloaderVisible(true)
-        fetch('http://localhost:5000/verifyIdentity?code=' + data.code)
+        fetch('/verifyIdentity?code=' + data.code)
             .then(res => res.json())
             .then(data => {
                 setPreloaderVisible(false)

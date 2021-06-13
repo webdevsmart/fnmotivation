@@ -32,7 +32,7 @@ const NotificationUI = ({ anchorEl, handleClose, notifications, preloaderVisibal
 
     const token = localStorage.getItem('token')
     const seenNoti = (info) => {
-        fetch(`http://localhost:5000/seenNoti/${info.notification_id}`, {
+        fetch(`/seenNoti/${info.notification_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

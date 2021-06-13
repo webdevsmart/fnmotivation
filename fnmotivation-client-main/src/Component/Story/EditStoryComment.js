@@ -21,7 +21,7 @@ const EditStoryComment = ({ cmnt, getComments }) => {
     const onSubmit = data => {
         
 
-        fetch('http://localhost:5000/editStoryComment', {
+        fetch('/editStoryComment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

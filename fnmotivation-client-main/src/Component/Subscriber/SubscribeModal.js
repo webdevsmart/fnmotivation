@@ -27,7 +27,7 @@ const SubscribeModal = ({ modal, toggle }) => {
                                         <div key={info.id} className="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
                                             <div style={{ cursor: 'pointer' }} className="related-articles-box">
                                                 <div className="image-holder">
-                                                    <Link to="/login" onClick={scrollToTop}><img src={`http://localhost:5000/${info.community_title}.png`} alt="community" /></Link>
+                                                    <Link to="/login" onClick={scrollToTop}><img src={`/${info.community_title}.png`} alt="community" /></Link>
                                                     <span><img src={require(`../../images/check-icon.svg`)} alt="tick" className="img-fluid" /></span>
                                                 </div>
                                             </div>

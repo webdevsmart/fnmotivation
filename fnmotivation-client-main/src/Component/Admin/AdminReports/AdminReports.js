@@ -16,7 +16,7 @@ const AdminReports = () => {
 
     const count = useCallback(() => {
         setLoading(true)
-        fetch('http://localhost:5000/storyCountReports', {
+        fetch('/storyCountReports', {
             method: 'GET',
             headers: {
                 authorization: token
@@ -40,7 +40,7 @@ const AdminReports = () => {
 
     const countArticle = useCallback(() => {
         setLoading(true)
-        fetch('http://localhost:5000/articleCountReports', {
+        fetch('/articleCountReports', {
             method: 'GET',
             headers: {
                 authorization: token

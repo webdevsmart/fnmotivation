@@ -36,7 +36,7 @@ const SpecificUser = ({ getNotifications }) => {
     const getFollow = useCallback(  () => {
 
 
-        fetch('http://localhost:5000/getFollow?id=' + ids, {
+        fetch('/getFollow?id=' + ids, {
             method: 'GET',
             headers: {
                 'Content-Type': 'Application/json',
@@ -69,7 +69,7 @@ const SpecificUser = ({ getNotifications }) => {
         }
 
 
-        fetch('http://localhost:5000/prssedFollow', {
+        fetch('/prssedFollow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',
@@ -119,7 +119,7 @@ const SpecificUser = ({ getNotifications }) => {
 
                                     <div>
                                         <div className="image-holder">
-                                            <img className="img-fluid image-short-big" src={`http://localhost:5000/${user.avatar}`} alt="user" />
+                                            <img className="img-fluid image-short-big" src={`/${user.avatar}`} alt="user" />
                                         </div>
                                         <div className="profile-right">
                                             <div className="text-box">

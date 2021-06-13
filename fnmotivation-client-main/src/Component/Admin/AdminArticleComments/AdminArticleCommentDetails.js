@@ -1,5 +1,4 @@
 /* eslint-disable eqeqeq */
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '../../../App';
@@ -17,7 +16,7 @@ const AdminArticleCommentDetails = (props) => {
         console.log()
         if (value == '0') {
             setBanLoader(id)
-            fetch(`http://localhost:5000/banArticleComment/${id}`, {
+            fetch(`/banArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -33,7 +32,7 @@ const AdminArticleCommentDetails = (props) => {
         } else if (value == '1') {
 
             setBanLoader(id)
-            fetch(`http://localhost:5000/unBanArticleComment/${id}`, {
+            fetch(`/unBanArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -56,7 +55,7 @@ const AdminArticleCommentDetails = (props) => {
             <div className="article-comments-reply">
 
                 <div className="image-holder">
-                    <img src={`http://localhost:5000/${props.avatar}`} alt="avatar" className="img-fluid" />
+                    <img src={`/${props.avatar}`} alt="avatar" className="img-fluid" />
                 </div>
 
                 <div className="text-box" id="txt">

@@ -29,7 +29,7 @@ const AdminCommentArticles = () => {
     }
     const getComments = useCallback(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/articleCommentsAdmin/${adminArticleID}/${active}?show=` + fetchData, {
+        fetch(`/articleCommentsAdmin/${adminArticleID}/${active}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token

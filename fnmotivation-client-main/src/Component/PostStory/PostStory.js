@@ -98,7 +98,7 @@ const PostStory = () => {
 
         if (data.file[0]) {
             data.file[0] && formData.append('file', data.file[0])
-            fetch('http://localhost:5000/postStory', {
+            fetch('/postStory', {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -124,13 +124,13 @@ const PostStory = () => {
 
         if (!data.file[0]) {
             const imageData = communityData.find(img => img.id == category.category)
-            const url = `http://localhost:5000/${imageData.community_title}.png`
+            const url = `/${imageData.community_title}.png`
             fetch(url)
                 .then(r => r.blob())
                 .then(blobFile => {
                     const newFile = new File([blobFile], "imageData", { type: "image/png" })
                     formData.append('file', newFile)
-                    fetch('http://localhost:5000/postStory', {
+                    fetch('/postStory', {
                         method: 'POST',
                         headers: {
                             authorization: token
@@ -160,7 +160,7 @@ const PostStory = () => {
     return (
         <section className="post-story-sec">
             <div className="container-fluid">
-                <OgData url={'http://fnmotivation.com/post-story'} title={'Post Story - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://localhost:5000/fnmotivation-logo.png'} />
+                <OgData url={'http://fnmotivation.com/post-story'} title={'Post Story - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'/fnmotivation-logo.png'} />
                 <div className="row">
                     <div className="col-12">
                         <div className="post-story-inner">

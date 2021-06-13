@@ -5,7 +5,7 @@ const About = () => {
 
     return (
         <div className="p-5">
-            <OgData url={'http://fnmotivation.com/about'} title={'About - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://localhost:5000/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/about'} title={'About - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'/fnmotivation-logo.png'} />
             <h1>Social Network Platform for People focused on Health and Wellness</h1>
 
             <p>This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect. These users will be ones who are struggling with certain health issues, those who interested in connecting with others or simply those who just want to be informed about health and wellness.  FNMotivation will provide this platform in a customer-centered, easy to use interface where people will be able to post stories, opinions and information. They will be able to engage with other like-minded people by commenting and initiating discussions. This platform is different from many other social networks like Facebook or twitter as this platform is focused specifically on communication around certain health and wellness categories which we call community categories. </p><br></br>

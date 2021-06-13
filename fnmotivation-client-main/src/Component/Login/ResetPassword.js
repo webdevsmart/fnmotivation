@@ -22,7 +22,7 @@ const ResetPassword = () => {
         }
 
         if(validation.password){
-            fetch('http://localhost:5000/changePassword', {
+            fetch('/changePassword', {
                 method: 'POST',
                 headers: { 
                     'content-type': 'application/json',

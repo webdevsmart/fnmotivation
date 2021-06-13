@@ -83,7 +83,7 @@ function App() {
   const IDdata = `${userID},${fetchData}`
   const getNotifications = useCallback(() => {
     setloader(true)
-    fetch('http://localhost:5000/getNotifications?id=' + IDdata, {
+    fetch('/getNotifications?id=' + IDdata, {
       method: 'GET',
       headers: {
         authorization: token

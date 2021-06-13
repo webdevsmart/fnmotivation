@@ -96,7 +96,7 @@ const Navbar = ({ handleChange, notifications, preloaderVisibale, fetchFunc, loa
                                                                     <h3>{username}</h3>
                                                                 </div>
                                                                 <div className="image-holder">
-                                                                    <img className="img-fluid" src={`http://localhost:5000/${avatar}`} alt="userImage" />
+                                                                    <img className="img-fluid" src={`/${avatar}`} alt="userImage" />
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -154,7 +154,7 @@ const Navbar = ({ handleChange, notifications, preloaderVisibale, fetchFunc, loa
                                                                     <h3>{username}</h3>
                                                                 </div>
                                                                 <div className="image-holder">
-                                                                    <img className="img-fluid" src={`http://localhost:5000/${avatar}`} alt="" />
+                                                                    <img className="img-fluid" src={`/${avatar}`} alt="" />
                                                                 </div>
                                                             </div>
                                                         </a>

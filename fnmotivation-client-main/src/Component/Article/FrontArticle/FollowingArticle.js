@@ -17,7 +17,7 @@ const FollowingArticle = ({ fetchFunc, fetchData, type }) => {
     const IDdata = `${userID},${fetchData}`
     const getAllArticle = useCallback(  () => {
         setloader(true)
-        fetch('http://localhost:5000/getAllFollowingArticle?id=' + IDdata, {
+        fetch('/getAllFollowingArticle?id=' + IDdata, {
             method: 'GET',
             headers: {
                 authorization: token

@@ -19,7 +19,7 @@ const AdminUserBookMarks = () => {
 
     const getBookMark = useCallback(() => {
         setIsLoading(true)
-        fetch('http://localhost:5000/getUserbookmarks?id=' + idData, {
+        fetch('/getUserbookmarks?id=' + idData, {
             method: 'GET'
         })
             .then(res => {

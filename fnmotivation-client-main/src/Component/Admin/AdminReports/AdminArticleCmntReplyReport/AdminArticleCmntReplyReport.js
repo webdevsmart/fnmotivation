@@ -21,7 +21,7 @@ const AdminArticleCmntReplyReport = () => {
 
     const countCommentsReply = useCallback(() => {
         setLoad(true)
-        fetch(`http://localhost:5000/countArticleCmntReplyeports`, {
+        fetch(`/countArticleCmntReplyeports`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -43,7 +43,7 @@ const AdminArticleCmntReplyReport = () => {
 
     const getCommentsReply = useCallback(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/articleReportCmntReplyDetails/?show=` + fetchData, {
+        fetch(`/articleReportCmntReplyDetails/?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -65,7 +65,7 @@ const AdminArticleCmntReplyReport = () => {
     const banStories = (id) => {
         if (value == '0') {
             setBanLoaderComment(id)
-            fetch(`http://localhost:5000/banReplyArticleComment/${id}`, {
+            fetch(`/banReplyArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -81,7 +81,7 @@ const AdminArticleCmntReplyReport = () => {
                 })
         } else if (value == '1') {
             setBanLoaderComment(id)
-            fetch(`http://localhost:5000/unBanReplyArticleComment/${id}`, {
+            fetch(`/unBanReplyArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -100,7 +100,7 @@ const AdminArticleCmntReplyReport = () => {
     const [banLoader, setBanLoader] = useState(null)
     const deleteReport = (id) => {
         setBanLoader(id)
-        fetch(`http://localhost:5000/deleteReport/${id}`, {
+        fetch(`/deleteReport/${id}`, {
             method: 'POST',
             headers: {
                 authorization: token

@@ -17,13 +17,13 @@ export const StoryInfoProvider = props => {
 
     const ParticularStoryWithUser = useCallback(  () => {
 
-        fetch('http://localhost:5000/getParticularStoryWithsUser?id=' + id)
+        fetch('/getParticularStoryWithsUser?id=' + id)
             .then(res => res.json())
             .then(data => {
                 setStory(data)
                 
                 const catID = data.map(id => id.community_id)
-                fetch('http://localhost:5000/getSelectedStory?catID=' + catID)
+                fetch('/getSelectedStory?catID=' + catID)
                     .then(res => res.json())
                     .then(data => {
                         
@@ -51,7 +51,7 @@ export const StoryInfoProvider = props => {
     // Like
 
     const allStoryLikes = useCallback(  () => {
-        fetch('http://localhost:5000/allStoryLikes?id=' + id)
+        fetch('/allStoryLikes?id=' + id)
             .then(res => res.json())
             .then(data => {
                 setAllLikes(data)
@@ -81,7 +81,7 @@ export const StoryInfoProvider = props => {
     const idis = `${activityID},${id}`
 
     const getStorybookmarks = useCallback(  () => {
-        fetch('http://localhost:5000/getStorybookmarks?id=' + idis, {
+        fetch('/getStorybookmarks?id=' + idis, {
             method: 'GET',
             headers: {
                 'Content-Type': 'Application/json',
@@ -114,7 +114,7 @@ export const StoryInfoProvider = props => {
     const getFollow = useCallback(  () => {
 
 
-        fetch('http://localhost:5000/getFollow?id=' + ids, {
+        fetch('/getFollow?id=' + ids, {
             method: 'GET',
             headers: {
                 'Content-Type': 'Application/json',

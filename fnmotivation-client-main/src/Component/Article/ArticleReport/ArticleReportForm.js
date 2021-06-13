@@ -15,7 +15,7 @@ const ArticleReportForm = (props) => {
     const onSubmit = async (data) => {
         const info = { from_user_id: userID, post_id: props.article.id, report_msg: data.report_msg }
         setLoader(true)
-        await fetch('http://localhost:5000/articleReport', {
+        await fetch('/articleReport', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

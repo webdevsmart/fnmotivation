@@ -63,7 +63,7 @@ const StoryComment = ({ activityID, storyID, getNotifications }) => {
     const ids = `${storyID},${activityID}`
 
     const getComments = useCallback(  () => {
-        fetch('http://localhost:5000/getComment?id=' + ids, {
+        fetch('/getComment?id=' + ids, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -89,7 +89,7 @@ const StoryComment = ({ activityID, storyID, getNotifications }) => {
     }
 
     const onSubmit = (data, e) => {
-        fetch('http://localhost:5000/postComment', {
+        fetch('/postComment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

@@ -30,7 +30,7 @@ const SpecificUserArticle = ({ userAllArticle, fetchFunc, loading }) => {
 
     const getUserSearchAllArticle = useCallback(  () => {
 
-        fetch('http://localhost:5000/getUserSearchAllArticle?search=' + searchID)
+        fetch('/getUserSearchAllArticle?search=' + searchID)
             .then(res => res.json())
             .then(data => {
                 setSearchUserAllArticle(data)

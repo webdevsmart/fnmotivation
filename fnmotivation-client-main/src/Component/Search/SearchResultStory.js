@@ -26,7 +26,7 @@ const SearchResultStory = ({ search, location, handleChange, checkKeyDown }) => 
 
     const SearchedStory = useCallback(  () => {
         setLoading(true)
-        fetch('http://localhost:5000/getSearchedStory?search=' + data)
+        fetch('/getSearchedStory?search=' + data)
             .then(res => res.json())
             .then(data => {
                 setAllStories(data)
@@ -73,7 +73,7 @@ const SearchResultStory = ({ search, location, handleChange, checkKeyDown }) => 
                                                 <Link to={"/post/" +story.story_id + "/" + story.title.replace(/\s/g, '-').substring(0, 60)} onClick={scrollToTop}>
                                                     <div className="related-articles-box">
                                                         <div className="image-holder">
-                                                            <img src={`http://localhost:5000/${story.post_thumbnail}`} alt="articleImage" className="img-fluid content-image" />
+                                                            <img src={`/${story.post_thumbnail}`} alt="articleImage" className="img-fluid content-image" />
                                                         </div>
                                                         <div className="text-box">
                                                             <h4>{story.community_title}</h4>

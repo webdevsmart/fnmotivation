@@ -13,7 +13,7 @@ const AdminArticleCommentReply = (props) => {
     const banReplyComment = (id) => {
         if (value == '0') {
             setBanLoader(id)
-            fetch(`http://localhost:5000/banReplyArticleComment/${id}`, {
+            fetch(`/banReplyArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -29,7 +29,7 @@ const AdminArticleCommentReply = (props) => {
         } else if (value == '1') {
 
             setBanLoader(id)
-            fetch(`http://localhost:5000/unBanReplyArticleComment/${id}`, {
+            fetch(`/unBanReplyArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -51,7 +51,7 @@ const AdminArticleCommentReply = (props) => {
             {props.replyComments.map(rep =>
                 <div className="article-comments-reply">
                     <div className="image-holder">
-                        <img src={`http://localhost:5000/${rep.avatar}`} alt="" className="img-fluid" />
+                        <img src={`/${rep.avatar}`} alt="" className="img-fluid" />
                     </div>
                     <div className="text-box" id="txt" >
                         <Link to={"/" + rep.user_id + "/" + rep.username } onClick={scrollToTop}><h3>{rep.username}</h3></Link>

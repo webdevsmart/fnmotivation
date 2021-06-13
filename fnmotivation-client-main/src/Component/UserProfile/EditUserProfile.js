@@ -23,7 +23,7 @@ const EditUserProfile = () => {
     // User Data
     const [userData, setUserData] = useState([])
     const getParticularUserData = useCallback(() => {
-        fetch('http://localhost:5000/getParticularUser?id=' + userID)
+        fetch('/getParticularUser?id=' + userID)
             .then(res => res.json())
             .then(data => {
                 setUserData(data)
@@ -39,7 +39,7 @@ const EditUserProfile = () => {
     //User Email & Username
     const [userName, setUserName] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/getAllUser')
+        fetch('/getAllUser')
             .then(res => res.json())
             .then(data => {
                 setUserName(data)
@@ -125,7 +125,7 @@ const EditUserProfile = () => {
                 formData.append('username', data.username.toLowerCase())
                 formData.append('email', data.email.toLowerCase())
                 formData.append('about', about)
-                fetch('http://localhost:5000/editUserDataWithOutImage', {
+                fetch('/editUserDataWithOutImage', {
                     method: 'POST',
                     headers: {
                         authorization: token
@@ -136,7 +136,7 @@ const EditUserProfile = () => {
                     .then(data => {
 
                         if (data.affectedRows > 0) {
-                            fetch('http://localhost:5000/getParticularUser?id=' + userID)
+                            fetch('/getParticularUser?id=' + userID)
                                 .then(res => res.json())
                                 .then(data => {
 
@@ -176,7 +176,7 @@ const EditUserProfile = () => {
                 formData.append('username', data.username.toLowerCase())
                 formData.append('email', data.email.toLowerCase())
                 formData.append('about', about)
-                fetch('http://localhost:5000/editUserData', {
+                fetch('/editUserData', {
                     method: 'POST',
                     headers: {
                         authorization: token
@@ -191,7 +191,7 @@ const EditUserProfile = () => {
                             setLoad(false)
                         }
                         else if (data.affectedRows > 0) {
-                            fetch('http://localhost:5000/getParticularUser?id=' + userID)
+                            fetch('/getParticularUser?id=' + userID)
                                 .then(res => res.json())
                                 .then(data => {
 
@@ -235,7 +235,7 @@ const EditUserProfile = () => {
                                     <form className="profile-edit-form" onSubmit={handleSubmit(onSubmit)}>
                                         <div className="form-group change-avatar mt-5">
                                             <label className="mb-2">Change profile picture</label>
-                                            {!image.viewImage && <img src={`http://localhost:5000/${user.avatar}`} alt="user" className="img-fluid rounded-image cropped" />}
+                                            {!image.viewImage && <img src={`/${user.avatar}`} alt="user" className="img-fluid rounded-image cropped" />}
                                             {image.viewImage && <>
                                                 <img src={image.viewImage} alt="user" />
                                             </>}

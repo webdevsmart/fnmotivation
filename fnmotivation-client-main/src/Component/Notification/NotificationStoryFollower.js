@@ -8,7 +8,7 @@ const NotificationStoryFollower = ( ) => {
     const [follower, setFollower] = useState([])
     
     const getUserFollower = useCallback(  () => {
-        fetch('http://localhost:5000/getUserFollower?id=' + userID)
+        fetch('/getUserFollower?id=' + userID)
             .then(res => res.json())
             .then(data => {
                 setFollower(data)

@@ -19,7 +19,7 @@ export const ReportStoryProvider = props => {
 
     const countStories = useCallback(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/countStoryReports`, {
+        fetch(`/countStoryReports`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -42,7 +42,7 @@ export const ReportStoryProvider = props => {
 
     const getStories = useCallback(() => {
         setLoadingPost(true)
-        fetch(`http://localhost:5000/StoryReportsDetails/?show=` + fetchData, {
+        fetch(`/StoryReportsDetails/?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token

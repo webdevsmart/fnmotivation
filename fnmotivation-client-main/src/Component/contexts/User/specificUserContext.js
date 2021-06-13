@@ -13,7 +13,7 @@ export const SpecificUserDataProvider = props => {
     const [loggedIn, setLoggedIn] = useState([])
 
     const getParticularUserData = useCallback( () => {
-        fetch('http://localhost:5000/getParticularUser?id=' + user, {
+        fetch('/getParticularUser?id=' + user, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -50,7 +50,7 @@ export const SpecificUserDataProvider = props => {
 
     const getAllPostsOfParticularUser = useCallback(  () => {
         setLoading(true)
-        fetch('http://localhost:5000/getAllPostsOfParticularUser?id=' + idData)
+        fetch('/getAllPostsOfParticularUser?id=' + idData)
             .then(res => res.json())
             .then(data => {
                 setUserAllStory([...userAllStory, ...data.data])
@@ -70,7 +70,7 @@ export const SpecificUserDataProvider = props => {
 
     const getAllArticleOfParticularUser = useCallback(  () => {
 
-        fetch('http://localhost:5000/getAllArticleOfParticularUser?id=' + idData)
+        fetch('/getAllArticleOfParticularUser?id=' + idData)
             .then(res => res.json())
             .then(data => {
                 setUserAllArticle([...userAllArticle, ...data.data])
@@ -92,7 +92,7 @@ export const SpecificUserDataProvider = props => {
     const [userBookMarkArticleCount, setUserBookMarkArticleCount] = useState([])
 
     const getUserbookmarks = useCallback(  () => {
-        fetch('http://localhost:5000/getUserbookmarks?id=' + idData, {
+        fetch('/getUserbookmarks?id=' + idData, {
             method: 'GET',
 
         })
@@ -115,7 +115,7 @@ export const SpecificUserDataProvider = props => {
     const [followingCount, setFollowingCount] = useState([])
 
     const getUserFollower = useCallback(  () => {
-        fetch('http://localhost:5000/getUserFollowing?id=' + idData, {
+        fetch('/getUserFollowing?id=' + idData, {
             method: 'GET',
 
         })
@@ -137,7 +137,7 @@ export const SpecificUserDataProvider = props => {
     const [followerCount, setFollowerCount] = useState([])
 
     const getUserFollowing = useCallback(  () => {
-        fetch('http://localhost:5000/getUserFollower?id=' + idData, {
+        fetch('/getUserFollower?id=' + idData, {
             method: 'GET',
 
         })

@@ -12,7 +12,7 @@ const PopularArticle = ({ fetchFunc, fetchData, type }) => {
     const [allArticle, setAllArticle] = useState([])
     const getAllArticle = useCallback(  () => {
         setloader(true)
-        fetch('http://localhost:5000/getAllPopularArticle?show=' + fetchData)
+        fetch('/getAllPopularArticle?show=' + fetchData)
             .then(res => res.json())
             .then(data => {
                 setAllArticle([...allArticle, ...data])

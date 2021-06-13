@@ -27,7 +27,7 @@ const StoryBookMark = ({ id }) => {
         const bookMark = bookMarkColor ? '' : 'active'
         setBookMarkColor(bookMark)
 
-        fetch('http://localhost:5000/bookMark?id=' + idis, {
+        fetch('/bookMark?id=' + idis, {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

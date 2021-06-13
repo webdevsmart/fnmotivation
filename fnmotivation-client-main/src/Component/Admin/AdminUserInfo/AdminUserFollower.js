@@ -21,7 +21,7 @@ const AdminUserFollower = () => {
 
     const getFollowers = useCallback(() => {
         setIsLoading(true)
-        fetch('http://localhost:5000/getUserFollower?id=' + idData,{
+        fetch('/getUserFollower?id=' + idData,{
             method: 'GET'
         })
             .then(res => res.json())
@@ -52,7 +52,7 @@ const AdminUserFollower = () => {
                     {followers.map(user =>
                         <tr key={user.user_id}>
                             <td>{user.user_id}</td>
-                            <td><img src={`http://localhost:5000/${user.avatar}`} alt="user" width="50" height="50" className="img-fluid" /></td>
+                            <td><img src={`/${user.avatar}`} alt="user" width="50" height="50" className="img-fluid" /></td>
                             <td>{user.fullname}</td>
                             <td>{user.username}</td>
                         </tr>)}
