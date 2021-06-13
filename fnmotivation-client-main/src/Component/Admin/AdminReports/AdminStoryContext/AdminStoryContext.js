@@ -19,7 +19,7 @@ export const ReportStoryProvider = props => {
 
     const countStories = useCallback(() => {
         setLoading(true)
-        fetch(`/countStoryReports`, {
+        fetch(`http://68.183.178.196/countStoryReports`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -42,7 +42,7 @@ export const ReportStoryProvider = props => {
 
     const getStories = useCallback(() => {
         setLoadingPost(true)
-        fetch(`/StoryReportsDetails/?show=` + fetchData, {
+        fetch(`http://68.183.178.196/StoryReportsDetails/?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token

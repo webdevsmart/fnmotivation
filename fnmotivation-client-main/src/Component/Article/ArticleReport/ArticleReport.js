@@ -13,7 +13,7 @@ const ArticleReport = (props) => {
     const token = localStorage.getItem('token')
 
     const deleteStory = (id) => {
-        fetch('/deleteParticularArticle?id=' + id, {
+        fetch('http://68.183.178.196/deleteParticularArticle?id=' + id, {
             method: 'POST',
             headers: {
                 authorization: token

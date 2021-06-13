@@ -17,7 +17,7 @@ const BeforeLoginModal = ({ modal, toggle }) => {
     const userID = JSON.parse(localStorage.getItem('userID'))
 
     const getParticularUserData = useCallback(() => {
-        fetch('/getParticularUser?id=' + userID, {
+        fetch('http://68.183.178.196/getParticularUser?id=' + userID, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -46,7 +46,7 @@ const BeforeLoginModal = ({ modal, toggle }) => {
     const [preloaderVisibale, setPreloaderVisible] = useState(true)
     const [alreadySubscribe, setAlreadySubscribe] = useState([])
     const getAlreadySubscribe = useCallback(() => {
-        fetch('/alreadySubscribe?id=' + userID, {
+        fetch('http://68.183.178.196/alreadySubscribe?id=' + userID, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -74,7 +74,7 @@ const BeforeLoginModal = ({ modal, toggle }) => {
 
 
     const sendSubscribe = (id) => {
-        fetch('/subscribe', {
+        fetch('http://68.183.178.196/subscribe', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -113,7 +113,7 @@ const BeforeLoginModal = ({ modal, toggle }) => {
     }
 
     const postType = () => {
-        fetch(`/userType/${userID}/${infoAudience}`, {
+        fetch(`http://68.183.178.196/userType/${userID}/${infoAudience}`, {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',
@@ -151,7 +151,7 @@ const BeforeLoginModal = ({ modal, toggle }) => {
                                                         <div key={info.id} className="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
                                                             <div style={{ cursor: 'pointer' }} className="related-articles-box">
                                                                 <div className="image-holder">
-                                                                    <img onClick={() => sendSubscribe(info.id)} src={`/${info.community_title}.png`} alt="community" />
+                                                                    <img onClick={() => sendSubscribe(info.id)} src={`http://68.183.178.196/${info.community_title}.png`} alt="community" />
                                                                     <span className='active'><img src={require(`../../images/check-icon.svg`).default} alt="tick" className="img-fluid" /></span>
                                                                 </div>
                                                             </div>
@@ -168,7 +168,7 @@ const BeforeLoginModal = ({ modal, toggle }) => {
                                                     <div key={info.id} className="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
                                                         <div style={{ cursor: 'pointer' }} className="related-articles-box">
                                                             <div className="image-holder">
-                                                                <img onClick={() => sendSubscribe(info.id)} src={`/${info.community_title}.png`} alt="community" />
+                                                                <img onClick={() => sendSubscribe(info.id)} src={`http://68.183.178.196/${info.community_title}.png`} alt="community" />
                                                                 <span><img src={require(`../../images/check-icon.svg`)} alt="tick" className="img-fluid" /></span>
                                                             </div>
                                                         </div>

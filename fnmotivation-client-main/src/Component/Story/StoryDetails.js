@@ -87,7 +87,7 @@ const StoryDetails = ({ getNotifications }) => {
         }
 
 
-        fetch('/prssedFollow', {
+        fetch('http://68.183.178.196/prssedFollow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',
@@ -124,7 +124,7 @@ const StoryDetails = ({ getNotifications }) => {
     const title = storyInfo.story.map(story => story.title)
     const des = storyInfo.story.map(story => story.body.substring(0, 100))
     const url = storyInfo.story.map(story => (`https://fnmotivation.com/post/` + story.story_id + "/" + story.title.replace(/\s/g, '-').substring(0, 60)))
-    const img = storyInfo.story.map(story => (`/${story.post_thumbnail}`))
+    const img = storyInfo.story.map(story => (`http://68.183.178.196/${story.post_thumbnail}`))
 
     // const setTitle = async title => {
     //     const el = document.querySelector("meta[name='title']");
@@ -189,7 +189,7 @@ const StoryDetails = ({ getNotifications }) => {
                                     <OgData title={story.title}
                                         description={story.body.substring(0, 100)}
                                         url={`https://fnmotivation.com/post/` + story.story_id + "/" + story.title.replace(/\s/g, '-').substring(0, 60)}
-                                        image={`/${story.post_thumbnail}`} />
+                                        image={`http://68.183.178.196/${story.post_thumbnail}`} />
 
                                     <div className="breadcrumb-main">
                                         <ol className="breadcrumb">
@@ -211,7 +211,7 @@ const StoryDetails = ({ getNotifications }) => {
                                                     <p>{moment(story.created_at.split('T')[0]).format('MM-DD-YYYY')}</p>
                                                     <div className="article-title-user">
                                                         <div className="user-holder">
-                                                            <img src={`/${story.avatar}`} alt="user" className="image-Short" />
+                                                            <img src={`http://68.183.178.196/${story.avatar}`} alt="user" className="image-Short" />
                                                         </div>
                                                         <div className="text-inner">
                                                             <Link to={"/" + story.user_id + "/" + story.username}> <h3>{story.username}</h3></Link>
@@ -291,7 +291,7 @@ const StoryDetails = ({ getNotifications }) => {
                                                     <Link target='_blank' to={"/post/" + story.story_id + "/" + story.title.replace(/\s/g, '-').substring(0, 60)} onClick={scrollToTop}>
                                                         <div className="related-articles-box">
                                                             <div className="image-holder">
-                                                                <img src={`/${story.community_title}.png`} alt="" className="img-fluid" />
+                                                                <img src={`http://68.183.178.196/${story.community_title}.png`} alt="" className="img-fluid" />
                                                             </div>
                                                             <div className="text-box">
                                                                 <h4>{story.community_title}</h4>

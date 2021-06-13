@@ -21,7 +21,7 @@ const EditStoryComment = ({ cmnt, getComments }) => {
     const onSubmit = data => {
         
 
-        fetch('/editStoryComment', {
+        fetch('http://68.183.178.196/editStoryComment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

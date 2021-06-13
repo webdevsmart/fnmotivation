@@ -7,7 +7,7 @@ const ShortCommunityStory = ({ artfetchData,community }) => {
     const [allArticle, setAllArticle] = useState([])
     const getAllArticle = useCallback(() => {
         setLoad(true)
-        fetch(`/getCommunityArticle/${community}?show=` + artfetchData)
+        fetch(`http://68.183.178.196/getCommunityArticle/${community}?show=` + artfetchData)
             .then(res => res.json())
             .then(data => {
                 setAllArticle([...allArticle, ...data])

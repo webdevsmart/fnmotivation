@@ -13,7 +13,7 @@ export const SpecificUserDataProvider = props => {
     const [loggedIn, setLoggedIn] = useState([])
 
     const getParticularUserData = useCallback( () => {
-        fetch('/getParticularUser?id=' + user, {
+        fetch('http://68.183.178.196/getParticularUser?id=' + user, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -50,7 +50,7 @@ export const SpecificUserDataProvider = props => {
 
     const getAllPostsOfParticularUser = useCallback(  () => {
         setLoading(true)
-        fetch('/getAllPostsOfParticularUser?id=' + idData)
+        fetch('http://68.183.178.196/getAllPostsOfParticularUser?id=' + idData)
             .then(res => res.json())
             .then(data => {
                 setUserAllStory([...userAllStory, ...data.data])
@@ -70,7 +70,7 @@ export const SpecificUserDataProvider = props => {
 
     const getAllArticleOfParticularUser = useCallback(  () => {
 
-        fetch('/getAllArticleOfParticularUser?id=' + idData)
+        fetch('http://68.183.178.196/getAllArticleOfParticularUser?id=' + idData)
             .then(res => res.json())
             .then(data => {
                 setUserAllArticle([...userAllArticle, ...data.data])
@@ -92,7 +92,7 @@ export const SpecificUserDataProvider = props => {
     const [userBookMarkArticleCount, setUserBookMarkArticleCount] = useState([])
 
     const getUserbookmarks = useCallback(  () => {
-        fetch('/getUserbookmarks?id=' + idData, {
+        fetch('http://68.183.178.196/getUserbookmarks?id=' + idData, {
             method: 'GET',
 
         })
@@ -115,7 +115,7 @@ export const SpecificUserDataProvider = props => {
     const [followingCount, setFollowingCount] = useState([])
 
     const getUserFollower = useCallback(  () => {
-        fetch('/getUserFollowing?id=' + idData, {
+        fetch('http://68.183.178.196/getUserFollowing?id=' + idData, {
             method: 'GET',
 
         })
@@ -137,7 +137,7 @@ export const SpecificUserDataProvider = props => {
     const [followerCount, setFollowerCount] = useState([])
 
     const getUserFollowing = useCallback(  () => {
-        fetch('/getUserFollower?id=' + idData, {
+        fetch('http://68.183.178.196/getUserFollower?id=' + idData, {
             method: 'GET',
 
         })

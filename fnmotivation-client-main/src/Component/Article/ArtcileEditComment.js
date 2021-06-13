@@ -56,7 +56,7 @@ const ArtcileEditComment = ({ handleClose, open, getArticleComments }) => {
             return text.replace("'", '///')
         }
         const reply = change(chnageCmnt)
-        fetch('/editArticleComment', {
+        fetch('http://68.183.178.196/editArticleComment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -15,7 +15,7 @@ const ArticleCommentReportForm = (props) => {
     const onSubmit = async (data) => {
         const info = { from_user_id: userID, post_id: props.comment.postID, reported_post_comment_id: props.comment.ac_id, report_msg: data.report_msg }
         setLoader(true)
-        await fetch('/articleCommentReport', {
+        await fetch('http://68.183.178.196/articleCommentReport', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

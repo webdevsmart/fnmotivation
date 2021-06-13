@@ -16,7 +16,7 @@ const CommunityStory = ({ fetchData, type, fetchFunc }) => {
     const IDdata = `${userID},${fetchData}`
     const AllStoryWithUser = useCallback(  () => {
         setloader(true)
-        fetch('/getCommunityStory?id=' + IDdata, {
+        fetch('http://68.183.178.196/getCommunityStory?id=' + IDdata, {
             method: 'GET',
             headers: {
                 authorization: token

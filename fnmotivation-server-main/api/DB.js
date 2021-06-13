@@ -2,8 +2,6 @@ const mysql = require('mysql');
 require('dotenv').config();
 const fs = require('fs');
 
-console.log(process.env.DB_HOST)
-
 const db = mysql.createConnection({
     // connectionLimit: 1000,
     // connectTimeout: 60 * 60 * 1000,
@@ -14,9 +12,9 @@ const db = mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
-    // ssl: {
-    //     ca: fs.readFileSync(__dirname + '/certs/ca.pem'),
-    // }
+    ssl: {
+        ca: fs.readFileSync(__dirname + '/certs/ca.pem'),
+    }
 
 })
 

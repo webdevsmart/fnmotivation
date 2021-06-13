@@ -33,7 +33,7 @@ const StoryReplyFormComment = ({ cmntID, storyID, getComments, getNotifications,
             return text.replace("'", '///')
         }
         const reply = change(data.replyComment)
-        fetch('/replyCommentPost', {
+        fetch('http://68.183.178.196/replyCommentPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

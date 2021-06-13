@@ -39,7 +39,7 @@ const AdminUsers = () => {
 
     const countUesrs = useCallback(() => {
         setLoad(true)
-        fetch(`/countUser`, {
+        fetch(`http://68.183.178.196/countUser`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -59,7 +59,7 @@ const AdminUsers = () => {
 
     const getUesrs = useCallback(() => {
         setLoading(true)
-        fetch(`/allUsersInfo/${active}/${time}?show=` + fetchData, {
+        fetch(`http://68.183.178.196/allUsersInfo/${active}/${time}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -92,7 +92,7 @@ const AdminUsers = () => {
     useEffect(() => {
         const fetchUser = () => {
             setLoading(true)
-            fetch('/searchUser?search=' + search, {
+            fetch('http://68.183.178.196/searchUser?search=' + search, {
                 method: 'GET',
                 headers: {
                     authorization: token
@@ -111,7 +111,7 @@ const AdminUsers = () => {
 
     const downloadFile = () => {
         setDownloadLoad(true)
-        fetch('/adminUserDataExport/', {
+        fetch('http://68.183.178.196/adminUserDataExport/', {
             headers: {
                 authorization: token
             }
@@ -131,7 +131,7 @@ const AdminUsers = () => {
     const banUser = (id) => {
         if (value == '0') {
             setBanLoader(id)
-            fetch(`/banUser/${id}`, {
+            fetch(`http://68.183.178.196/banUser/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -147,7 +147,7 @@ const AdminUsers = () => {
                 })
         } else if (value == '1') {
             setBanLoader(id)
-            fetch(`/unBanUser/${id}`, {
+            fetch(`http://68.183.178.196/unBanUser/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -231,7 +231,7 @@ const AdminUsers = () => {
                                     <td>{user.username}</td>
                                     <td>{user.role}</td>
                                     <td>{user.email}</td>
-                                    <td><img src={`/${user.avatar}`} alt="userAvatar" className="img-fluid" width="50" height="50" /></td>
+                                    <td><img src={`http://68.183.178.196/${user.avatar}`} alt="userAvatar" className="img-fluid" width="50" height="50" /></td>
                                     <td>{moment(user.created_at.split('T')[0]).format('L')}</td>
                                     <td>{user.FacebookID && 'Facebook'} {user.GoogleId && 'Gmail'} {!user.GoogleId && !user.FacebookID && 'Email'}</td>
                                     <td>
@@ -257,7 +257,7 @@ const AdminUsers = () => {
                                     <td>{user.username}</td>
                                     <td>{user.role}</td>
                                     <td>{user.email}</td>
-                                    <td><img src={`/${user.avatar}`} alt="userAvatar" className="img-fluid" width="50" height="50" /></td>
+                                    <td><img src={`http://68.183.178.196/${user.avatar}`} alt="userAvatar" className="img-fluid" width="50" height="50" /></td>
                                     <td>{moment(user.created_at.split('T')[0]).format('L')}</td>
                                     <td>{user.FacebookID && 'Facebook'} {user.GoogleId && 'Gmail'} {!user.GoogleId && !user.FacebookID && 'Email'}</td>
                                     <td>

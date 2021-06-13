@@ -113,7 +113,7 @@ const TestBody = () => {
             const compressedFile = data.file[0] && await imageCompression(data.file[0], options);
 
             data.file[0] && formData.append('file', compressedFile)
-            fetch('/postStory', {
+            fetch('http://68.183.178.196/postStory', {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -147,7 +147,7 @@ const TestBody = () => {
 
     return (
         <section className="post-story-sec">
-            <OgData url={'http://fnmotivation.com/post-story'} title={'Post Story - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/post-story'} title={'Post Story - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
@@ -208,7 +208,7 @@ const TestBody = () => {
                                         editor={ClassicEditor}
                                         config={{
                                             ckfinder: {
-                                                uploadUrl: '/imageUpload'
+                                                uploadUrl: 'http://68.183.178.196/imageUpload'
                                             }
                                         }}
                                         onChange={handleBody}

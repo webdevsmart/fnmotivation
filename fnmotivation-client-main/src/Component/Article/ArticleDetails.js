@@ -51,7 +51,7 @@ const ArticleDetails = ({ getNotifications }) => {
         }
 
 
-        fetch('/prssedFollow', {
+        fetch('http://68.183.178.196/prssedFollow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',
@@ -106,7 +106,7 @@ const ArticleDetails = ({ getNotifications }) => {
                                             <p>{moment(article.created_at.split('T')[0]).format('MM-DD-YYYY')}</p>
                                             <div className="article-title-user">
                                                 <div className="user-holder">
-                                                    <img src={`/${article.avatar}`} alt="user" className="image-Short" />
+                                                    <img src={`http://68.183.178.196/${article.avatar}`} alt="user" className="image-Short" />
                                                 </div>
                                                 <div className="text-inner">
                                                     <Link to={"/" + article.user_id + "/" + article.username}> <h3>{article.username}</h3></Link>
@@ -160,7 +160,7 @@ const ArticleDetails = ({ getNotifications }) => {
                                         <Link target="_blank" to={"/article/" + article.id} onClick={scrollToTop}>
                                             <div className="related-articles-box">
                                                 <div className="image-holder">
-                                                    <img src={`/${article.community_title}.png`} alt="articleImage" className="img-fluid content-image" />
+                                                    <img src={`http://68.183.178.196/${article.community_title}.png`} alt="articleImage" className="img-fluid content-image" />
                                                 </div>
                                                 <div className="text-box">
                                                     <h4>{article.community_name}</h4>

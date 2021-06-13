@@ -16,7 +16,7 @@ const AdminReports = () => {
 
     const count = useCallback(() => {
         setLoading(true)
-        fetch('/storyCountReports', {
+        fetch('http://68.183.178.196/storyCountReports', {
             method: 'GET',
             headers: {
                 authorization: token
@@ -40,7 +40,7 @@ const AdminReports = () => {
 
     const countArticle = useCallback(() => {
         setLoading(true)
-        fetch('/articleCountReports', {
+        fetch('http://68.183.178.196/articleCountReports', {
             method: 'GET',
             headers: {
                 authorization: token

@@ -10,7 +10,7 @@ const NotificationStoryComments = () => {
     const [allComments, setAllComments] = useState([])
 
     const allCommentsOfParticularUser = useCallback(  () => {
-        fetch('/allCommentsOfParticularUser?id=' + userID)
+        fetch('http://68.183.178.196/allCommentsOfParticularUser?id=' + userID)
             .then(res => res.json())
             .then(data => {
                 setAllComments(data)

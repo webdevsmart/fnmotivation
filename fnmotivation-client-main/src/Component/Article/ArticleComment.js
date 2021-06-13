@@ -48,7 +48,7 @@ const ArticleComment = ({ articleID, getNotifications }) => {
     const [commentLoad, setCommentLoad] = useState(true)
 
     const getArticleComments = useCallback(  () => {
-        fetch('/allArticleCommentsOfAPost?id=' + articleID, {
+        fetch('http://68.183.178.196/allArticleCommentsOfAPost?id=' + articleID, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -78,7 +78,7 @@ const ArticleComment = ({ articleID, getNotifications }) => {
 
     const onSubmit = (data, e) => {
 
-        fetch('/postArticleComment', {
+        fetch('http://68.183.178.196/postArticleComment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

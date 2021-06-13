@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors')
 const db = require('./DB')
@@ -17,10 +18,10 @@ const transporter = require('./Email')
 const articleLike = () => {
     const sqlQuery = `SELECT email_notification_post_likes_id, u.fullname, u.email, p.id, p.title, total_likes, email_notifications_for_post_likes.updated_at FROM email_notifications_for_post_likes INNER JOIN users u on email_notifications_for_post_likes.user_id = u.user_id INNER JOIN posts p on email_notifications_for_post_likes.post_id = p.id WHERE is_email_sent = 0;`
 
+
     db.query(sqlQuery, (err, doc) => {
         if (err) {
             console.log(err);
-            
         }
 
         if (doc.length !== 0) {
@@ -200,7 +201,7 @@ const articleCommunity = () => {
                                         transporter.sendMail(mailOptions, function (err, info) {
                                             if (err) {
                                                 console.log(err);
-                                                // callback(err);
+                                                callback(err);
                                             }
                                             else {
                                                 const sqlQuery = `UPDATE fnmotivation.email_notifications_for_top2_community_post  t set t.is_email_sent = 1 WHERE email_notifications_for_community_post_id = ${data.email_notifications_for_community_post_id}`

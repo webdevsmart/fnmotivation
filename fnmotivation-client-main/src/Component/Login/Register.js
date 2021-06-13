@@ -24,7 +24,7 @@ const Register = () => {
     const [userName, setUserName] = useState([])
 
     useEffect(() => {
-        fetch('/getAllUser')
+        fetch('http://68.183.178.196/getAllUser')
             .then(res => res.json())
             .then(data => {
                 setUserName(data)
@@ -35,7 +35,7 @@ const Register = () => {
         setMsg(null)
         setPreloaderVisibale(true)
         if (res.profile) {
-            fetch('/facebookSignUp', {
+            fetch('http://68.183.178.196/facebookSignUp', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(res.profile)
@@ -72,7 +72,7 @@ const Register = () => {
         setMsg(null)
         if (res.profileObj) {
             setPreloaderVisibale(true)
-            fetch('/googleSignUp', {
+            fetch('http://68.183.178.196/googleSignUp', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(res.profileObj)
@@ -183,7 +183,7 @@ const Register = () => {
             console.log(data)
             setPreloaderVisibale(true)
             //Register USER
-            fetch('/registerUser', {
+            fetch('http://68.183.178.196/registerUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

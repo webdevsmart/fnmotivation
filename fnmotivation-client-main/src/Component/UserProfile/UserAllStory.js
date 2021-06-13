@@ -33,7 +33,7 @@ const UserAllStory = ({ userAllStory, fetchFunc, loading, fetchData }) => {
 
     const getUserSearchAllStory = useCallback(  () => {
 
-        fetch('/getUserSearchAllStory?search=' + searchID)
+        fetch('http://68.183.178.196/getUserSearchAllStory?search=' + searchID)
             .then(res => res.json())
             .then(data => {
                 setSearchUserAllStory(data)
@@ -47,7 +47,7 @@ const UserAllStory = ({ userAllStory, fetchFunc, loading, fetchData }) => {
     const [loader, setLoader] = useState(null)
     const deleteStory = (id) => {
         setLoader(id)
-        fetch('/deleteParticularStory?id=' + id, {
+        fetch('http://68.183.178.196/deleteParticularStory?id=' + id, {
             method: 'POST',
             headers: {
                 authorization: token

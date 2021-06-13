@@ -28,7 +28,7 @@ const StoryMainComment = (props) => {
 
             <div className="article-comments-reply">
                 <div className="image-holder">
-                    <img src={`/${props.avatar}`} alt="avatar" className="img-fluid" />
+                    <img src={`http://68.183.178.196/${props.avatar}`} alt="avatar" className="img-fluid" />
                 </div>
 
                 <div className="text-box" id="txt">

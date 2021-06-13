@@ -15,7 +15,7 @@ const PopularStories = ({ fetchFunc, fetchData, type }) => {
     const [loader, setloader] = useState(false)
     const AllStoryWithUser = useCallback(  () => {
         setloader(true)
-        fetch('/getPopularStory?show=' +fetchData )
+        fetch('http://68.183.178.196/getPopularStory?show=' +fetchData )
             .then(res => res.json())
             .then(data => {
                 setloader(true)

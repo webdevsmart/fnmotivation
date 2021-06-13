@@ -22,7 +22,7 @@ const ResetPassword = () => {
         }
 
         if(validation.password){
-            fetch('/changePassword', {
+            fetch('http://68.183.178.196/changePassword', {
                 method: 'POST',
                 headers: { 
                     'content-type': 'application/json',

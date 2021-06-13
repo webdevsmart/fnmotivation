@@ -25,7 +25,7 @@ const LoginUser = () => {
         setMsg(null)
         if (res.profileObj) {
             setPreloaderVisibale(true)
-            fetch(`/googleLogin?id=` + res.profileObj.googleId)
+            fetch(`http://68.183.178.196/googleLogin?id=` + res.profileObj.googleId)
                 .then(res => res.json())
                 .then(data => {
                     if (data.error) {
@@ -52,7 +52,7 @@ const LoginUser = () => {
         setMsg(null)
         if (res.profile) {
             setPreloaderVisibale(true)
-            fetch(`/facebookLogin?id=` + res.profile.id)
+            fetch(`http://68.183.178.196/facebookLogin?id=` + res.profile.id)
                 .then(res => res.json())
                 .then(data => {
                     if (data.error) {
@@ -83,7 +83,7 @@ const LoginUser = () => {
         setMsg(null)
         setErrorMessage([])
         setPreloaderVisibale(true)
-        fetch('/loginUser?email=' + data.email, {
+        fetch('http://68.183.178.196/loginUser?email=' + data.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'Application/json',

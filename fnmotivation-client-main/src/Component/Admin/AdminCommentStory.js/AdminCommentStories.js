@@ -28,7 +28,7 @@ const AdminCommentStories = () => {
     }
     const getComments = useCallback(() => {
         setLoading(true)
-        fetch(`/storyCommentsAdmin/${storyID}/${active}?show=` + fetchData, {
+        fetch(`http://68.183.178.196/storyCommentsAdmin/${storyID}/${active}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token

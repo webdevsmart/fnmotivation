@@ -18,7 +18,7 @@ const UserNotificationSettings = () => {
     const userID = localStorage.getItem('userID')
     const [noti, setNoti] = useState([])
     const getNotiSettings = useCallback(  () => {
-        fetch('/getNotiSettings?id=' + userID, {
+        fetch('http://68.183.178.196/getNotiSettings?id=' + userID, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -82,7 +82,7 @@ const UserNotificationSettings = () => {
 
     const onSubmit = (data) => {
 
-        fetch('/notificationSettings', {
+        fetch('http://68.183.178.196/notificationSettings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

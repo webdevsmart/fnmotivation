@@ -18,7 +18,7 @@ const AdminStoryReport = () => {
     const [banLoader, setBanLoader] = useState(null)
     const deleteReport = (id) => {
         setBanLoader(id)
-        fetch(`/deleteReport/${id}`, {
+        fetch(`http://68.183.178.196/deleteReport/${id}`, {
             method: 'POST',
             headers: {
                 authorization: token
@@ -40,7 +40,7 @@ const AdminStoryReport = () => {
     const banStories = (id) => {
         if (value == '0') {
             setBanLoaderStory(id)
-            fetch(`/banStories/${id}`, {
+            fetch(`http://68.183.178.196/banStories/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -56,7 +56,7 @@ const AdminStoryReport = () => {
                 })
         } else if (value == '1') {
             setBanLoaderStory(id)
-            fetch(`/unBanStories/${id}`, {
+            fetch(`http://68.183.178.196/unBanStories/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token

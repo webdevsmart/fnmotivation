@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { createContext, useState, useEffect, useCallback } from 'react';
 import './App.css';
 import {
@@ -83,7 +84,7 @@ function App() {
   const IDdata = `${userID},${fetchData}`
   const getNotifications = useCallback(() => {
     setloader(true)
-    fetch('/getNotifications?id=' + IDdata, {
+    fetch('http://68.183.178.196/getNotifications?id=' + IDdata, {
       method: 'GET',
       headers: {
         authorization: token

@@ -18,7 +18,7 @@ const CommunityArticle = ({ fetchFunc, fetchData, type }) => {
 
     const getAllArticle = useCallback(  () => {
         setloader(true)
-        fetch('/getAllCommunityArticle?id=' + IDdata, {
+        fetch('http://68.183.178.196/getAllCommunityArticle?id=' + IDdata, {
             method: 'GET',
             headers: {
                 authorization: token

@@ -30,7 +30,7 @@ const TagStoryPage = () => {
 
     const AllStoryWithUser = useCallback(  () => {
         setLoading(true)
-        fetch('/getTagPosts?tag=' + ids)
+        fetch('http://68.183.178.196/getTagPosts?tag=' + ids)
             .then(res => res.json())
             .then(data => {
                 setAllStories(data)
@@ -53,7 +53,7 @@ const TagStoryPage = () => {
 
     return (
         <div className="related-articles pl-5 pr-5">
-            <OgData url={'http://fnmotivation.com/'} title={`Tag - ${str} - FNMotivation`} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/'} title={`Tag - ${str} - FNMotivation`} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
             <div className="story-tag">
                 <h3>Tag :</h3>
                 <ul>
@@ -71,7 +71,7 @@ const TagStoryPage = () => {
                                 <div className="related-articles-box">
                                     <div className="image-holder">
                                     {story.post_thumbnail ?
-                                        <img src={`/${story.post_thumbnail}`} alt="postImage" className="img-fluid content-image cropped" /> :
+                                        <img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="postImage" className="img-fluid content-image cropped" /> :
                                         <img src={require(`../../images/com/${story.community_id}.png`).default} alt="postImage" className="img-fluid content-image" />}
                                     </div>
                                     <div className="text-box">

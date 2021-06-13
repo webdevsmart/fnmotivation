@@ -14,7 +14,7 @@ export const AdminContextProvider = props => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`/userInfo/${uID}`, {
+        fetch(`http://68.183.178.196/userInfo/${uID}`, {
             method: 'GET',
             headers: {
                 authorization: token
