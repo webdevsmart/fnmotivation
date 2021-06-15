@@ -12,12 +12,7 @@ import { CircularProgress } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
 import { scrollToTop } from '../../App';
 
-
-
-
-
 const Register = () => {
-
 
     const [preloaderVisibale, setPreloaderVisibale] = useState(false)
     const [msg, setMsg] = useState(null)
@@ -108,7 +103,8 @@ const Register = () => {
         userEmailError: false
     })
 
-    const [res, setRes] = useState(null)
+    const [res, setRes] = useState(true)
+    // setRes(true)
     var callback = function () {
     };
     var verifyCallback = function (response) {
@@ -346,12 +342,12 @@ const Register = () => {
                                         </label>
 
 
-                                        <div className="d-flex justify-content-center">
+                                        {/* <div className="d-flex justify-content-center">
                                             <ReCAPTCHA
                                                 sitekey="6LdH5mMaAAAAALlyeFqMa7Qz0JdRyU6HTs8zNlWl"
                                                 onChange={verifyCallback}
                                             />
-                                        </div>
+                                        </div> */}
                                         <div className="d-flex justify-content-center">
                                             {!res && <span className="text-center mt-2" style={{ color: 'red' }}>*Verify you are human</span>}
                                         </div>
