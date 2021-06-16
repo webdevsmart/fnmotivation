@@ -23,7 +23,7 @@ const EditUserProfile = () => {
     // User Data
     const [userData, setUserData] = useState([])
     const getParticularUserData = useCallback(() => {
-        fetch('http://68.183.178.196/getParticularUser?id=' + userID)
+        fetch('http://68.183.178.196/api//getParticularUser?id=' + userID)
             .then(res => res.json())
             .then(data => {
                 setUserData(data)
@@ -39,7 +39,7 @@ const EditUserProfile = () => {
     //User Email & Username
     const [userName, setUserName] = useState([])
     useEffect(() => {
-        fetch('http://68.183.178.196/getAllUser')
+        fetch('http://68.183.178.196/api//getAllUser')
             .then(res => res.json())
             .then(data => {
                 setUserName(data)
@@ -125,7 +125,7 @@ const EditUserProfile = () => {
                 formData.append('username', data.username.toLowerCase())
                 formData.append('email', data.email.toLowerCase())
                 formData.append('about', about)
-                fetch('http://68.183.178.196/editUserDataWithOutImage', {
+                fetch('http://68.183.178.196/api//editUserDataWithOutImage', {
                     method: 'POST',
                     headers: {
                         authorization: token
@@ -136,7 +136,7 @@ const EditUserProfile = () => {
                     .then(data => {
 
                         if (data.affectedRows > 0) {
-                            fetch('http://68.183.178.196/getParticularUser?id=' + userID)
+                            fetch('http://68.183.178.196/api//getParticularUser?id=' + userID)
                                 .then(res => res.json())
                                 .then(data => {
 
@@ -176,7 +176,7 @@ const EditUserProfile = () => {
                 formData.append('username', data.username.toLowerCase())
                 formData.append('email', data.email.toLowerCase())
                 formData.append('about', about)
-                fetch('http://68.183.178.196/editUserData', {
+                fetch('http://68.183.178.196/api//editUserData', {
                     method: 'POST',
                     headers: {
                         authorization: token
@@ -191,7 +191,7 @@ const EditUserProfile = () => {
                             setLoad(false)
                         }
                         else if (data.affectedRows > 0) {
-                            fetch('http://68.183.178.196/getParticularUser?id=' + userID)
+                            fetch('http://68.183.178.196/api//getParticularUser?id=' + userID)
                                 .then(res => res.json())
                                 .then(data => {
 
@@ -235,7 +235,7 @@ const EditUserProfile = () => {
                                     <form className="profile-edit-form" onSubmit={handleSubmit(onSubmit)}>
                                         <div className="form-group change-avatar mt-5">
                                             <label className="mb-2">Change profile picture</label>
-                                            {!image.viewImage && <img src={`http://68.183.178.196/${user.avatar}`} alt="user" className="img-fluid rounded-image cropped" />}
+                                            {!image.viewImage && <img src={`http://68.183.178.196/api//${user.avatar}`} alt="user" className="img-fluid rounded-image cropped" />}
                                             {image.viewImage && <>
                                                 <img src={image.viewImage} alt="user" />
                                             </>}

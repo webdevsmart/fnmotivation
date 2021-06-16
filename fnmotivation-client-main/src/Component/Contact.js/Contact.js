@@ -34,7 +34,7 @@ const Contact = () => {
         //     }
         // }
         if (error.isVerified) {
-            fetch('http://68.183.178.196/sendContactInfo', {
+            fetch('http://68.183.178.196/api//sendContactInfo', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(data)
@@ -55,7 +55,7 @@ const Contact = () => {
 
     return (
         <section className="login-sec register-sec contact-us">
-            <OgData url={'http://fnmotivation.com/contact'} title={'Contact - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/contact'} title={'Contact - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/api//fnmotivation-logo.png'} />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">

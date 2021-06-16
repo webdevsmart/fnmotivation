@@ -18,7 +18,7 @@ const AdminUserArticles = () => {
 
     const getArticles = useCallback(() => {
         setIsLoading(true)
-        fetch(`http://68.183.178.196/getUserArticle/${u_id}?show=` + fetchData, {
+        fetch(`http://68.183.178.196/api//getUserArticle/${u_id}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -40,7 +40,7 @@ const AdminUserArticles = () => {
 
     const getqueryArticle = useCallback(() => {
         setIsLoading(true)
-        fetch(`http://68.183.178.196/getUserArticleQuery/${u_id}?search=` + search, {
+        fetch(`http://68.183.178.196/api//getUserArticleQuery/${u_id}?search=` + search, {
             method: 'GET',
             headers: {
                 authorization: token

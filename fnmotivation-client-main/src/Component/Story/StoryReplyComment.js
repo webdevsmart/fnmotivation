@@ -10,7 +10,7 @@ const StoryReplyComment = (props) => {
     return (
         <div className="article-comments-reply">
             <div className="image-holder">
-                <img src={`http://68.183.178.196/${props.avatar}`} alt="" className="img-fluid" />
+                <img src={`http://68.183.178.196/api//${props.avatar}`} alt="" className="img-fluid" />
             </div>
             <div className="text-box" id="txt" >
                 <a href={"/" + props.userID + "/" + props.username} onClick={scrollToTop}><h3>{props.username}</h3></a>

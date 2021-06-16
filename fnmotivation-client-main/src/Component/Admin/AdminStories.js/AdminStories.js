@@ -25,7 +25,7 @@ const AdminStories = () => {
 
     const countStories = useCallback(() => {
         setLoading(true)
-        fetch(`http://68.183.178.196/countStories`, {
+        fetch(`http://68.183.178.196/api//countStories`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -68,7 +68,7 @@ const AdminStories = () => {
 
     const getStories = useCallback(() => {
         setLoading(true)
-        fetch(`http://68.183.178.196/allAdminStories/${active}/${time}/${community}?show=` + fetchData, {
+        fetch(`http://68.183.178.196/api//allAdminStories/${active}/${time}/${community}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -99,7 +99,7 @@ const AdminStories = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('http://68.183.178.196/searchPost?search=' + search, {
+        fetch('http://68.183.178.196/api//searchPost?search=' + search, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -114,7 +114,7 @@ const AdminStories = () => {
 
     const getSearch = useCallback(() => {
         setLoad(true)
-        fetch('http://68.183.178.196/searchPost?search=' + search, {
+        fetch('http://68.183.178.196/api//searchPost?search=' + search, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -136,7 +136,7 @@ const AdminStories = () => {
     const banStories = (id) => {
         if (value == '0') {
             setBanLoader(id)
-            fetch(`http://68.183.178.196/banStories/${id}`, {
+            fetch(`http://68.183.178.196/api//banStories/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -153,7 +153,7 @@ const AdminStories = () => {
                 })
         } else if (value == '1') {
             setBanLoader(id)
-            fetch(`http://68.183.178.196/unBanStories/${id}`, {
+            fetch(`http://68.183.178.196/api//unBanStories/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -244,7 +244,7 @@ const AdminStories = () => {
                                     <td>{story.username}</td>
                                     <td>
                                         {story.post_thumbnail ?
-                                            <img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="postImage" width="50px" height="50px" className="img-fluid" /> :
+                                            <img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="postImage" width="50px" height="50px" className="img-fluid" /> :
                                             <img src={require(`../../../images/com/${story.community_id}.png`).default} alt="postImage" width="50px" height="50px" className="img-fluid" />}
                                     </td>
                                     <td>{story.tags}</td>
@@ -275,7 +275,7 @@ const AdminStories = () => {
                                     <td>{story.username}</td>
                                     <td>
                                         {story.post_thumbnail ?
-                                            <img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="postImage" width="50px" height="50px" className="img-fluid" /> :
+                                            <img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="postImage" width="50px" height="50px" className="img-fluid" /> :
                                             <img src={require(`../../../images/com/${story.community_id}.png`).default} alt="postImage" width="50px" height="50px" className="img-fluid" />}
                                     </td>
                                     <td>{story.tags}</td>

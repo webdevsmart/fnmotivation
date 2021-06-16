@@ -15,7 +15,7 @@ const ArticleReportForm = (props) => {
     const onSubmit = async (data) => {
         const info = { from_user_id: userID, post_id: props.article.id, report_msg: data.report_msg }
         setLoader(true)
-        await fetch('http://68.183.178.196/articleReport', {
+        await fetch('http://68.183.178.196/api//articleReport', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ const AdminArticleCommentDetails = (props) => {
         console.log()
         if (value == '0') {
             setBanLoader(id)
-            fetch(`http://68.183.178.196/banArticleComment/${id}`, {
+            fetch(`http://68.183.178.196/api//banArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -32,7 +32,7 @@ const AdminArticleCommentDetails = (props) => {
         } else if (value == '1') {
 
             setBanLoader(id)
-            fetch(`http://68.183.178.196/unBanArticleComment/${id}`, {
+            fetch(`http://68.183.178.196/api//unBanArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -55,7 +55,7 @@ const AdminArticleCommentDetails = (props) => {
             <div className="article-comments-reply">
 
                 <div className="image-holder">
-                    <img src={`http://68.183.178.196/${props.avatar}`} alt="avatar" className="img-fluid" />
+                    <img src={`http://68.183.178.196/api//${props.avatar}`} alt="avatar" className="img-fluid" />
                 </div>
 
                 <div className="text-box" id="txt">

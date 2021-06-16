@@ -29,7 +29,7 @@ const VerifyEmail = () => {
         if (validationEmail) {
             setPreloaderVisible(true)
             const newEmail = data.email.toLowerCase()
-            fetch('http://68.183.178.196/getEmailforPass?email=' + newEmail)
+            fetch('http://68.183.178.196/api//getEmailforPass?email=' + newEmail)
                 .then(res => res.json())
                 .then(data => {
                     setPreloaderVisible(false)
@@ -49,7 +49,7 @@ const VerifyEmail = () => {
 
     const verifyCode = (data, e) => {
         setResetEmail(false)
-        fetch('http://68.183.178.196/verifyCode', {
+        fetch('http://68.183.178.196/api//verifyCode', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ code: data.code, userID: localStorage.getItem('userID') })

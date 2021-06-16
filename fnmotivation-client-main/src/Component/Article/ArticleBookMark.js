@@ -19,7 +19,7 @@ const ArticleBookMark = ({ articleID }) => {
         const bookMark = bookMarkColor ? '' : 'active'
         setBookMarkColor(bookMark)
 
-        fetch('http://68.183.178.196/articleBookMark?id=' + idis, {
+        fetch('http://68.183.178.196/api//articleBookMark?id=' + idis, {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

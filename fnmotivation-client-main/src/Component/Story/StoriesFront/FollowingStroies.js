@@ -16,7 +16,7 @@ const FollowingStroies = ({ fetchFunc, fetchData, type }) => {
     const IDdata = `${userID},${fetchData}`
     const AllStoryWithUser = useCallback(  () => {
         setloader(true)
-        fetch('http://68.183.178.196/getFollowingStroy?id=' + IDdata, {
+        fetch('http://68.183.178.196/api//getFollowingStroy?id=' + IDdata, {
             method: 'GET',
             headers: {
                 authorization: token

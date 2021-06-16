@@ -14,7 +14,7 @@ const ArticleBody = () => {
 
     return (
         <div>
-            <OgData url={'http://fnmotivation.com/'} title={'FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/'} title={'FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/api//fnmotivation-logo.png'} />
             <section className="article-sec">
                 <div className="container-fluid">
                     <div className="row">

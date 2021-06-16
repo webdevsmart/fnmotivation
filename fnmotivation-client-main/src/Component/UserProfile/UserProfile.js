@@ -32,7 +32,7 @@ const UserProfile = () => {
 
     return (
         <section className="profile-sec">
-            <OgData url={'http://fnmotivation.com/'} title={'Profile - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/'} title={'Profile - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/api//fnmotivation-logo.png'} />
             <div className="container-fluid">
                 {userAllData.preloaderVisibale ? <Preloader />
                     :
@@ -43,7 +43,7 @@ const UserProfile = () => {
 
                                     <div>
                                         <div className="image-holder">
-                                            <img src={`http://68.183.178.196/${user.avatar}`} alt="user" className="img-fluid image-short-big" />
+                                            <img src={`http://68.183.178.196/api//${user.avatar}`} alt="user" className="img-fluid image-short-big" />
                                         </div>
                                         <div className="profile-right">
                                             <div className="text-box">

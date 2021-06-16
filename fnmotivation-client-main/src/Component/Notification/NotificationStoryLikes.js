@@ -10,7 +10,7 @@ const NotificationStoryLikes = () => {
     const [allLikes, setAllLikes] = useState([])
 
     const allStoryLikesOfParticularUser = useCallback(  () => {
-        fetch('http://68.183.178.196/allStoryLikesOfParticularUser?id=' + userID)
+        fetch('http://68.183.178.196/api//allStoryLikesOfParticularUser?id=' + userID)
             .then(res => res.json())
             .then(data => {
                 setAllLikes(data)

@@ -12,7 +12,7 @@ const RecentCom = ({ fetchFunc, fetchData }) => {
 
     const AllStoryWithUser = useCallback(  () => {
         setloader(true)
-        fetch(`http://68.183.178.196/getStoryByCommunity/${communityID}?visible=` + fetchData)
+        fetch(`http://68.183.178.196/api//getStoryByCommunity/${communityID}?visible=` + fetchData)
             .then(res => res.json())
             .then(data => {
                 setAllStories([...allStories, ...data])
@@ -37,7 +37,7 @@ const RecentCom = ({ fetchFunc, fetchData }) => {
                             <div className="related-articles-box">
                                 <div className="image-holder">
                                 {story.post_thumbnail ?
-                                        <img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="postImage" className="img-fluid content-image cropped" /> :
+                                        <img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="postImage" className="img-fluid content-image cropped" /> :
                                         <img src={require(`../../../images/com/${story.community_id}.png`).default} alt="postImage" className="img-fluid content-image" />}
                                 </div>
                                 <div className="text-box">

@@ -21,7 +21,7 @@ const AdminArticleCmntReport = () => {
 
     const countComments = useCallback(() => {
         setLoad(true)
-        fetch(`http://68.183.178.196/countArticleReports`, {
+        fetch(`http://68.183.178.196/api//countArticleReports`, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -43,7 +43,7 @@ const AdminArticleCmntReport = () => {
 
     const getComments = useCallback(() => {
         setLoading(true)
-        fetch(`http://68.183.178.196/articleReportCmntDetails/?show=` + fetchData, {
+        fetch(`http://68.183.178.196/api//articleReportCmntDetails/?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -65,7 +65,7 @@ const AdminArticleCmntReport = () => {
     const banStories = (id) => {
         if (value == '0') {
             setBanLoaderComment(id)
-            fetch(`http://68.183.178.196/banArticleComment/${id}`, {
+            fetch(`http://68.183.178.196/api//banArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -81,7 +81,7 @@ const AdminArticleCmntReport = () => {
                 })
         } else if (value == '1') {
             setBanLoaderComment(id)
-            fetch(`http://68.183.178.196/unBanArticleComment/${id}`, {
+            fetch(`http://68.183.178.196/api//unBanArticleComment/${id}`, {
                 method: 'POST',
                 headers: {
                     authorization: token
@@ -100,7 +100,7 @@ const AdminArticleCmntReport = () => {
     const [banLoader, setBanLoader] = useState(null)
     const deleteReport = (id) => {
         setBanLoader(id)
-        fetch(`http://68.183.178.196/deleteReport/${id}`, {
+        fetch(`http://68.183.178.196/api//deleteReport/${id}`, {
             method: 'POST',
             headers: {
                 authorization: token

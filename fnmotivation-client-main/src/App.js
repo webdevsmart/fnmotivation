@@ -84,7 +84,7 @@ function App() {
   const IDdata = `${userID},${fetchData}`
   const getNotifications = useCallback(() => {
     setloader(true)
-    fetch('http://68.183.178.196/getNotifications?id=' + IDdata, {
+    fetch('http://68.183.178.196/api//getNotifications?id=' + IDdata, {
       method: 'GET',
       headers: {
         authorization: token
@@ -150,8 +150,30 @@ function App() {
   }, [])
 
 
+  const test = () => {
+    fetch('http://68.183.178.196/api//test', {
+      method: 'GET',
+      headers: {
+        authorization: token
+      },
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      // setNotifications([...notifications, ...data.doc])
+      // setnotiCount(data.count[0].notiCount)
+      // setPreloaderVisible(false)
+      // setloader(false)
+    })
+  }
+
   return (
     <div>
+      <div>
+        <button onClick={test}>
+          <h1>test</h1>
+        </button>
+      </div>
       <ParicualrUserDataProvider>
         <Communities.Provider value={[category, setCategory]}>
           <NotificationSettingsUI.Provider value={[notificationUI, setNotificationUI]}>

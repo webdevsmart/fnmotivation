@@ -11,7 +11,7 @@ const UserVerify = () => {
 
     const onSubmit = (data, e) => {
         setPreloaderVisible(true)
-        fetch('http://68.183.178.196/verifyIdentity?code=' + data.code)
+        fetch('http://68.183.178.196/api//verifyIdentity?code=' + data.code)
             .then(res => res.json())
             .then(data => {
                 setPreloaderVisible(false)

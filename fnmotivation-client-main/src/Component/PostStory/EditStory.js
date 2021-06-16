@@ -22,7 +22,7 @@ const EditStory = () => {
     const [tags, setTags] = useState([])
     const getParticularStory = useCallback(() => {
 
-        fetch('http://68.183.178.196/getParticularStoryWithsUser?id=' + storyID)
+        fetch('http://68.183.178.196/api//getParticularStoryWithsUser?id=' + storyID)
             .then(res => res.json())
             .then(data => {
                 setStory(data)
@@ -138,7 +138,7 @@ const EditStory = () => {
 
         // console.log('title', data.postTitle, 'categ', community.toString(), 'summary', data.postSummary, 'body', bodyTxt.length === 0 ? storyBody.toString() : bodyTxt, 'file', !file ? img.toString() : file, 'tag', tags.toString(), 'id', storyID)
 
-        fetch('http://68.183.178.196/editStory', {
+        fetch('http://68.183.178.196/api//editStory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -221,7 +221,7 @@ const EditStory = () => {
                                         {/* <input type="file" size="60" onChange={imageHandler} /> */}
                                                 </label>
                                                 {<span>Can't Update</span>}
-                                                {!image.viewImage && story.post_thumbnail ? <img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="imageUplaod" className="w-25 mt-2" />
+                                                {!image.viewImage && story.post_thumbnail ? <img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="imageUplaod" className="w-25 mt-2" />
                                                     :
                                                     <img src={require(`../../images/com/${story.community_id}.png`).default} alt="postImage" className="img-fluid content-image" />}
 
@@ -239,7 +239,7 @@ const EditStory = () => {
                                                     }}
                                                     config={{
                                                         ckfinder: {
-                                                            uploadUrl: 'http://68.183.178.196/imageUpload'
+                                                            uploadUrl: 'http://68.183.178.196/api//imageUpload'
                                                         }
                                                     }}
                                                     onChange={handleBody}

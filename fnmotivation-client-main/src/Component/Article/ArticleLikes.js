@@ -16,7 +16,7 @@ const ArticleLikes = ({ articleID, getNotifications }) => {
         const like = likeColor ? '' : 'active'
         setLikeColor(like)
 
-        fetch('http://68.183.178.196/articleLike', {
+        fetch('http://68.183.178.196/api//articleLike', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

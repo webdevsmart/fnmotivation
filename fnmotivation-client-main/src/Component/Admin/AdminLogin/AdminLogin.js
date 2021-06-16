@@ -12,7 +12,7 @@ const AdminLogin = () => {
     const onSubmit = (data) => {
         setError(false)
         setPreloaderVisibale(true)
-        fetch('http://68.183.178.196/adminLogin?email=' + data.email, {
+        fetch('http://68.183.178.196/api//adminLogin?email=' + data.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'Application/json',

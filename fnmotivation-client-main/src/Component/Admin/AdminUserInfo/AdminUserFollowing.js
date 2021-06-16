@@ -19,7 +19,7 @@ const AdminUserFollowing = () => {
 
     const getFollowers = useCallback( () => {
         setIsLoading(true)
-        fetch(`http://68.183.178.196/getUserFollowing?id=` + idData, {
+        fetch(`http://68.183.178.196/api//getUserFollowing?id=` + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -49,7 +49,7 @@ const AdminUserFollowing = () => {
                     {folllowing.map(user =>
                         <tr key={user.user_id}>
                             <td>{user.user_id}</td>
-                            <td><img src={`http://68.183.178.196/${user.avatar}`} alt="user" width="50" height="50" className="img-fluid" /></td>
+                            <td><img src={`http://68.183.178.196/api//${user.avatar}`} alt="user" width="50" height="50" className="img-fluid" /></td>
                             <td>{user.fullname}</td>
                             <td>{user.username}</td>
                         </tr>)}

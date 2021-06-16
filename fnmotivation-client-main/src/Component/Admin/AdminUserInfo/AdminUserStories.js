@@ -19,7 +19,7 @@ const AdminUserStories = () => {
 
     const getStories = useCallback(() => {
         setIsLoading(true)
-        fetch(`http://68.183.178.196/userStories/${u_id}?show=` + fetchData, {
+        fetch(`http://68.183.178.196/api//userStories/${u_id}?show=` + fetchData, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -41,7 +41,7 @@ const AdminUserStories = () => {
 
     const getStoriesQuery = useCallback(() => {
         setIsLoading(true)
-        fetch(`http://68.183.178.196/userStoriesQuery/${u_id}?search=` + search, {
+        fetch(`http://68.183.178.196/api//userStoriesQuery/${u_id}?search=` + search, {
             method: 'GET',
             headers: {
                 authorization: token
@@ -99,7 +99,7 @@ const AdminUserStories = () => {
                                     <td>{story.story_id}</td>
                                     <td>{story.title}</td>
                                     <td>{story.shory_story ? story.shory_story : 'No Summary'}</td>
-                                    <td><img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="story" className="img-fluid" width="50" height="50" /></td>
+                                    <td><img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="story" className="img-fluid" width="50" height="50" /></td>
                                     <td>{story.tags}</td>
                                     <td>{moment(story.created_at.split('T')[0]).format('L')}</td>
                                     <td>
@@ -117,7 +117,7 @@ const AdminUserStories = () => {
                                     <td>{story.story_id}</td>
                                     <td>{story.title}</td>
                                     <td>{story.shory_story ? story.shory_story : 'No Summary'}</td>
-                                    <td><img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="story" className="img-fluid" width="50" height="50" /></td>
+                                    <td><img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="story" className="img-fluid" width="50" height="50" /></td>
                                     <td>{story.tags}</td>
                                     <td>{moment(story.created_at.split('T')[0]).format('L')}</td>
                                     <td>

@@ -30,7 +30,7 @@ const SpecificUserStory = ({ userAllStory, fetchFunc, loading }) => {
 
     const getUserSearchAllStory = useCallback(  () => {
 
-        fetch('http://68.183.178.196/getUserSearchAllStory?search=' + searchID)
+        fetch('http://68.183.178.196/api//getUserSearchAllStory?search=' + searchID)
             .then(res => res.json())
             .then(data => {
                 setSearchUserAllStory(data)

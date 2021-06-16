@@ -177,11 +177,21 @@ const storyComment = () => {
 
 }
 
-storyComment()
+// storyComment()
 
 //Community Story
 
-
+const readHTMLFile = function (path, callback) {
+    fs.readFile(path, { encoding: 'utf-8' }, function (err, html) {
+        if (err) {
+            throw err;
+            callback(err);
+        }
+        else {
+            callback(null, html);
+        }
+    });
+};
 
 const storyCommunity = () => {
 
@@ -207,8 +217,30 @@ const storyCommunity = () => {
                 var ID = id.map(id => id.user_id_to_be_mailed)
                 var uniqueID = ID.filter((v, i, a) => a.indexOf(v) === i);
 
-                const sqlEmailData = `SELECT email_notifications_for_community_story_id,user_id_to_be_mailed, u.fullname AS mailed_user_full_name, u.username as mailing_users_username,u.email as email, s.story_id,community_title,c.id AS communtiy_id,is_email_sent,id,title,short_story,post_thumbnail, u2.user_id AS story_creator_user_id, u2.fullname AS story_creator_fullnaem,u2.username AS story_creator_username
-                        FROM email_notifications_for_top2_community_story JOIN communities c on email_notifications_for_top2_community_story.community_id = c.id JOIN stories s on email_notifications_for_top2_community_story.story_id = s.story_id JOIN users u on user_id_to_be_mailed = u.user_id JOIN users u2 ON story_creator_id = u2.user_id WHERE is_email_sent = 0 AND user_id_to_be_mailed = ${uniqueID[0]};`
+                const sqlEmailData = `
+                        SELECT 
+                        email_notifications_for_community_story_id,
+                        user_id_to_be_mailed,
+                        u.fullname AS mailed_user_full_name,
+                        u.username as mailing_users_username,
+                        u.email as email,
+                        s.story_id,
+                        community_title,
+                        c.id AS communtiy_id,
+                        is_email_sent,
+                        id,
+                        title,
+                        body,
+                        short_story,
+                        post_thumbnail,
+                        u2.user_id AS story_creator_user_id,
+                        u2.fullname AS story_creator_fullnaem,
+                        u2.username AS story_creator_username
+                        FROM email_notifications_for_top2_community_story 
+                        JOIN communities c on email_notifications_for_top2_community_story.community_id = c.id 
+                        JOIN stories s on email_notifications_for_top2_community_story.story_id = s.story_id 
+                        JOIN users u on user_id_to_be_mailed = u.user_id 
+                        JOIN users u2 ON story_creator_id = u2.user_id WHERE is_email_sent = 0 AND user_id_to_be_mailed = ${uniqueID[0]};`
                 db.query(sqlEmailData, (err, doc) => {
                     if (err) {
                         console.log(err)
@@ -216,34 +248,35 @@ const storyCommunity = () => {
                     console.log(doc)
                     // mail
                     {
-                        doc.map(data => {
-                            var readHTMLFile = function (path, callback) {
-                                fs.readFile(path, { encoding: 'utf-8' }, function (err, html) {
-                                    if (err) {
-                                        throw err;
-                                        callback(err);
-                                    }
-                                    else {
-                                        callback(null, html);
-                                    }
-                                });
-                            };
-
-                            readHTMLFile(__dirname + '/../emailTemplates/newsletter.html', function (err, html) {
-                                var template = handlebars.compile(html);
-                                var replacements = {
-                                    personName: data.story_creator_fullnaem,
+                        // modified by bill
+                        console.log(doc.length);return;
+                        if (doc.length > 0) {
+                            let toEmail = data[0].email;
+                            let fullname = data[0].mailed_user_full_name;
+                            
+                            const postList = [];
+                            doc.map(data => {
+                                let post = {
                                     postDate: moment(data.storty_created_at).format('MM/DD/YYYY'),
-                                    postTitle: data.title,
-                                    userName: data.story_creator_username,
                                     category: data.community_title,
+                                    postTitle: data.title,
+                                    description: data.body,
+                                    userName: data.story_creator_username,
                                     postImage: `https://fnmotivation.com/${data.post_thumbnail}`,
                                     url: `https://fnmotivation.com/post/${data.story_id}/${data.title.replace(/\s/g, '-').substring(0, 60)}`,
+                                }
+                                postList.push(post);
+                            })
+                            readHTMLFile(__dirname + '/../emailTemplates/newsletter1.html', function (err, html) {
+                                var template = handlebars.compile(html);
+                                var replacements = {
+                                    personName : fullname,
+                                    postList : postList
                                 };
                                 var htmlToSend = template(replacements);
                                 var mailOptions = {
                                     from: 'info@fnmotivation.com',
-                                    to: data.email,
+                                    to: toEmail,
                                     subject: 'Check out story posts in your communities',
                                     html: htmlToSend
                                 };
@@ -253,31 +286,31 @@ const storyCommunity = () => {
                                         callback(err);
                                     }
                                     else {
-                                        const sqlQuery = `UPDATE fnmotivation.email_notifications_for_top2_community_story t set t.is_email_sent = 1 WHERE email_notifications_for_community_story_id = ${data.email_notifications_for_community_story_id}`
-                                        db.query(sqlQuery, (err, doc) => {
-                                            if (err) {
-                                                console.log(err);
-                                            } else {
-                                                console.log(info)
-                                            }
-
-                                        })
+                                        doc.map(data => {
+                                            const sqlQuery = `UPDATE fnmotivation.email_notifications_for_top2_community_story t set t.is_email_sent = 1 WHERE email_notifications_for_community_story_id = ${data.email_notifications_for_community_story_id}`
+                                            db.query(sqlQuery, (err, doc) => {
+                                                if (err) {
+                                                    console.log(err);
+                                                } else {
+                                                    console.log(info)
+                                                }
+                                            })
+                                        });
                                     }
                                 });
                             });
-                        })
+                        }
+                        // end modified by bill
                     }
                     // mail End
                 })
-
-
             }
         })
 
     })
 
 }
-storyCommunity()
+// storyCommunity()
 
 //Following Story
 
@@ -308,42 +341,61 @@ const storyFollowing = () => {
                 //ID map
                 {
                     uniqueID.map(id => {
-                        const sqlEmailData = `SELECT email_notifications_for_following_users_5_story_id,user_id_to_be_mailed, u.fullname AS mailed_user_full_name, u.username as mailing_users_username,u.email as email, s.story_id,community_title,c.id AS communtiy_id,is_email_sent,id,title,short_story, u2.user_id AS story_creator_user_id, u2.fullname AS story_creator_fullnaem,u2.username AS story_creator_username
-                    FROM email_notifications_for_following_users_5_story  JOIN stories s on email_notifications_for_following_users_5_story.story_id = s.story_id  JOIN users u on user_id_to_be_mailed = u.user_id JOIN users u2 ON story_creator_id = u2.user_id JOIN communities c on s.community_id = c.id WHERE is_email_sent = 0 AND user_id_to_be_mailed = ${id};`
+                        const sqlEmailData = `
+                                SELECT 
+                                email_notifications_for_following_users_5_story_id,
+                                user_id_to_be_mailed,
+                                u.fullname AS mailed_user_full_name,
+                                u.username as mailing_users_username,
+                                u.email as email,
+                                s.story_id,
+                                community_title,
+                                c.id AS communtiy_id,
+                                is_email_sent,
+                                id,
+                                title,
+                                body,
+                                short_story,
+                                u2.user_id AS story_creator_user_id,
+                                u2.fullname AS story_creator_fullnaem,
+                                u2.username AS story_creator_username
+                                FROM email_notifications_for_following_users_5_story  
+                                JOIN stories s on email_notifications_for_following_users_5_story.story_id = s.story_id  
+                                JOIN users u on user_id_to_be_mailed = u.user_id 
+                                JOIN users u2 ON story_creator_id = u2.user_id 
+                                JOIN communities c on s.community_id = c.id WHERE is_email_sent = 0 AND user_id_to_be_mailed = ${id};`
                         db.query(sqlEmailData, (err, doc) => {
                             if (err) {
                                 console.log(err)
                             }
                             // mail
                             {
-                                doc.map(data => {
-                                    var readHTMLFile = function (path, callback) {
-                                        fs.readFile(path, { encoding: 'utf-8' }, function (err, html) {
-                                            if (err) {
-                                                throw err;
-                                                callback(err);
-                                            }
-                                            else {
-                                                callback(null, html);
-                                            }
-                                        });
-                                    };
-
+                                // modified by bill
+                                if (doc.length > 0) {
+                                    const toEmail = doc[0].email;
+                                    const fullname = doc[0].mailed_user_full_name;
+                                    let postList = [];
+                                    doc.map(data => {
+                                        let post = {
+                                            postDate: moment(data.storty_created_at).format('MM/DD/YYYY'),
+                                            category: data.community_title,
+                                            postTitle: data.title,
+                                            description: data.body,
+                                            userName: data.story_creator_username,
+                                            postImage: `https://fnmotivation.com/${data.post_thumbnail}`,
+                                            url: `https://fnmotivation.com/post/${data.story_id}/${data.title.replace(/\s/g, '-').substring(0, 60)}`,
+                                        }
+                                    })
                                     readHTMLFile(__dirname + '/../emailTemplates/newsletter.html', function (err, html) {
                                         var template = handlebars.compile(html);
                                         var replacements = {
-                                            personName: data.story_creator_fullnaem,
-                                            postDate: moment(data.storty_created_at).format('MM/DD/YYYY'),
-                                            postTitle: data.title,
-                                            userName: data.story_creator_username,
-                                            category: data.community_title,
-                                            postImage: `https://fnmotivation.com/${data.post_thumbnail}`,
-                                            url: `https://fnmotivation.com/post/${data.story_id}/${data.title.replace(/\s/g, '-').substring(0, 60)}`,
+                                            personName: fullname,
+                                            postList: postList
                                         };
                                         var htmlToSend = template(replacements);
                                         var mailOptions = {
                                             from: 'info@fnmotivation.com',
-                                            to: data.email,
+                                            to: toEmail,
                                             subject: 'Check out story posts in your communities',
                                             html: htmlToSend
                                         };
@@ -353,20 +405,20 @@ const storyFollowing = () => {
                                                 callback(err);
                                             }
                                             else {
-                                                //deleting id
-                                                const sqlQuery = `UPDATE fnmotivation.email_notifications_for_following_users_5_story t set t.is_email_sent = 1 WHERE email_notifications_for_following_users_5_story_id = ${data.email_notifications_for_following_users_5_story_id}`
-                                                db.query(sqlQuery, (err, doc) => {
-                                                    if (err) {
-                                                        console.log(err);
-                                                    } else {
-                                                        console.log(info)
-                                                    }
-
-                                                })
+                                                doc.map(data => {
+                                                    const sqlQuery = `UPDATE fnmotivation.email_notifications_for_following_users_5_story t set t.is_email_sent = 1 WHERE email_notifications_for_following_users_5_story_id = ${data.email_notifications_for_following_users_5_story_id}`
+                                                    db.query(sqlQuery, (err, doc) => {
+                                                        if (err) {
+                                                            console.log(err);
+                                                        } else {
+                                                            console.log(info)
+                                                        }
+                                                    });
+                                                });
                                             }
                                         });
                                     });
-                                })
+                                }
                             }
                             // mail End
                         })
@@ -382,25 +434,25 @@ const storyFollowing = () => {
 
 }
 
-storyFollowing()
+// storyFollowing()
 
-schedule.scheduleJob('0 0 * * *', () => {
-    followerEmail()
-    storyLike()
-    storyComment()
-    storyFollowing()
-})
+// schedule.scheduleJob('0 0 * * *', () => {
+//     followerEmail()
+//     storyLike()
+//     storyComment()
+//     storyFollowing()
+// })
 
-schedule.scheduleJob('0 8 * * SUN', () => {
-    storyFollowing()
-})
-schedule.scheduleJob('0 8 * * TUE', () => {
-    storyFollowing()
-})
+// schedule.scheduleJob('0 8 * * SUN', () => {
+//     storyFollowing()
+// })
+// schedule.scheduleJob('0 8 * * TUE', () => {
+//     storyFollowing()
+// })
 
-schedule.scheduleJob('0 7 * * MON', () => {
-    storyCommunity()
-})
+// schedule.scheduleJob('0 7 * * MON', () => {
+//     storyCommunity()
+// })
 
 
 module.exports = router

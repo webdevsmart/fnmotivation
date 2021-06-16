@@ -6,7 +6,7 @@ import moment from 'moment';
 const UserSearchResult = ({ userSearchAllStory }) => {
     const token = localStorage.getItem('token')
     const deleteStory = (id) => {
-        fetch('http://68.183.178.196/deleteParticularStory?id=' + id, {
+        fetch('http://68.183.178.196/api//deleteParticularStory?id=' + id, {
             method: 'POST',
             headers: {
                 authorization: token

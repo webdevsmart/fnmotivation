@@ -29,7 +29,7 @@ const ArticleReplyFormComment = ({ac_id, postID, getArticleComments, getNotifica
             return text.replace("'", '///')
         }
         const reply = change(data.replyArticleComment)
-        fetch('http://68.183.178.196/replyArticleCommentPost', {
+        fetch('http://68.183.178.196/api//replyArticleCommentPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

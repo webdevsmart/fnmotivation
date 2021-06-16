@@ -63,7 +63,7 @@ const StoryComment = ({ activityID, storyID, getNotifications }) => {
     const ids = `${storyID},${activityID}`
 
     const getComments = useCallback(  () => {
-        fetch('http://68.183.178.196/getComment?id=' + ids, {
+        fetch('http://68.183.178.196/api//getComment?id=' + ids, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -89,7 +89,7 @@ const StoryComment = ({ activityID, storyID, getNotifications }) => {
     }
 
     const onSubmit = (data, e) => {
-        fetch('http://68.183.178.196/postComment', {
+        fetch('http://68.183.178.196/api//postComment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

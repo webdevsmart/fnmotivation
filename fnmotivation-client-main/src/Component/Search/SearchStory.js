@@ -5,7 +5,7 @@ import SearchResultStory from './SearchResultStory';
 const SearchStory = ({ search, handleChange }) => {
     return (
         <section className="article-sec">
-            <OgData url={'http://fnmotivation.com/'} title={'Search - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/'} title={'Search - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/api//fnmotivation-logo.png'} />
             <div className="container-fluid">
                 <SearchResultStory search={search} handleChange={handleChange} />
             </div>

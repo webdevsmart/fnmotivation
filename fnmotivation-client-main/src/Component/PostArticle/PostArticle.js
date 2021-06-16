@@ -27,7 +27,7 @@ const PostArticle = () => {
     const onSubmit = (data) => {
         setPreloaderVisible(true)
 
-        fetch('http://68.183.178.196/getArticlePreview?url=' + data.articleLink, {
+        fetch('http://68.183.178.196/api//getArticlePreview?url=' + data.articleLink, {
             method: 'GET',
             headers: { authorization: token }
         })
@@ -55,7 +55,7 @@ const PostArticle = () => {
         }
         if(category.length !== 0){
             setPreloaderSendArticle(true)
-        fetch('http://68.183.178.196/postArticle', {
+        fetch('http://68.183.178.196/api//postArticle', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -67,7 +67,7 @@ const PostArticle = () => {
                 sourceText: articleDetails.ogUrl,
                 link: articleDetails.ogUrl,
                 articleDescription: articleDetails.ogDescription,
-                articleImageLink: articleDetails.ogImage ? articleDetails.ogImage : 'http://68.183.178.196/no-image.jpg',
+                articleImageLink: articleDetails.ogImage ? articleDetails.ogImage : 'http://68.183.178.196/api//no-image.jpg',
                 userID: userID,
                 mail: mail
             })
@@ -90,7 +90,7 @@ const PostArticle = () => {
 
     return (
         <section className="post-story-sec">
-            <OgData url={'http://fnmotivation.com/post-article'} title={'Post Article - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/fnmotivation-logo.png'} />
+            <OgData url={'http://fnmotivation.com/post-article'} title={'Post Article - FNMotivation'} description={'This new social network is a unique platform that is centered around health and wellness. This platform will provide a central location for people to like-minded people to connect.'} image={'http://68.183.178.196/api//fnmotivation-logo.png'} />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
@@ -120,7 +120,7 @@ const PostArticle = () => {
                                             <div className="col-md-4">
                                                 <div className="related-articles-box">
                                                     <div className="image-holder">
-                                                        {articleDetails.ogImage ? <img src={articleDetails.ogImage} alt="artcileImage" className="img-fluid" /> : <img src="http://68.183.178.196/no-image.jpg" alt="no-show" />}
+                                                        {articleDetails.ogImage ? <img src={articleDetails.ogImage} alt="artcileImage" className="img-fluid" /> : <img src="http://68.183.178.196/api//no-image.jpg" alt="no-show" />}
                                                     </div>
                                                     <div className="text-box">
                                                         <h4>{articleDetails.ogTitle ? articleDetails.ogTitle : <p>No Url available</p>}</h4>

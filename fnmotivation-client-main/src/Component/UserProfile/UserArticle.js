@@ -33,7 +33,7 @@ const UserArticle = ({ userAllArticle, fetchFunc, loading, fetchData }) => {
 
     const getUserSearchAllArticle = useCallback(  () => {
 
-        fetch('http://68.183.178.196/getUserSearchAllArticle?search=' + searchID)
+        fetch('http://68.183.178.196/api//getUserSearchAllArticle?search=' + searchID)
             .then(res => res.json())
             .then(data => {
                 setSearchUserAllStory(data)
@@ -48,7 +48,7 @@ const UserArticle = ({ userAllArticle, fetchFunc, loading, fetchData }) => {
 
     const deleteArticle = (id) => {
         setLoader(id)
-        fetch('http://68.183.178.196/deleteParticularArticle?id=' + id, {
+        fetch('http://68.183.178.196/api//deleteParticularArticle?id=' + id, {
             method: 'POST',
             headers: {
                 authorization: token

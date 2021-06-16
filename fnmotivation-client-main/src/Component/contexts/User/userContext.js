@@ -27,7 +27,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getParticularUserData = useCallback(  () => {
         setLoading(true)
-        fetch('http://68.183.178.196/getParticularUser?id=' + userID, {
+        fetch('http://68.183.178.196/api//getParticularUser?id=' + userID, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -52,7 +52,7 @@ export const ParicualrUserDataProvider = props => {
     const getAllPostsOfParticularUser = useCallback(  () => {
 
         setLoading(true)
-        fetch('http://68.183.178.196/getAllPostsOfParticularUser?id=' + idData, {
+        fetch('http://68.183.178.196/api//getAllPostsOfParticularUser?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -75,7 +75,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getAllArticleOfParticularUser = useCallback(  () => {
 
-        fetch('http://68.183.178.196/getAllArticleOfParticularUser?id=' + idData)
+        fetch('http://68.183.178.196/api//getAllArticleOfParticularUser?id=' + idData)
             .then(res => res.json())
             .then(data => {
                 setUserAllArticle([...userAllArticle, ...data.data])
@@ -98,7 +98,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getUserbookmarks = useCallback(  () => {
         setLoading(true)
-        fetch('http://68.183.178.196/getUserbookmarks?id=' + idData, {
+        fetch('http://68.183.178.196/api//getUserbookmarks?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -123,7 +123,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getUserFollower = useCallback(  () => {
         setLoading(true)
-        fetch('http://68.183.178.196/getUserFollower?id=' + idData, {
+        fetch('http://68.183.178.196/api//getUserFollower?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -145,7 +145,7 @@ export const ParicualrUserDataProvider = props => {
 
     const getUserFollowing = useCallback(  () => {
         setLoading(true)
-        fetch('http://68.183.178.196/getUserFollowing?id=' + idData, {
+        fetch('http://68.183.178.196/api//getUserFollowing?id=' + idData, {
             method: 'GET'
         })
             .then(res => res.json())

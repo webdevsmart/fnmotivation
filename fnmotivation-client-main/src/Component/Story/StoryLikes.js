@@ -18,7 +18,7 @@ const StoryLikes = ({ id, allLikes, getNotifications }) => {
         const like = likeColor ? '' : 'active'
         setLikeColor(like)
 
-        fetch('http://68.183.178.196/storyLike', {
+        fetch('http://68.183.178.196/api//storyLike', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Application/json',

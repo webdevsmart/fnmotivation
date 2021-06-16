@@ -13,7 +13,7 @@ const PopularCom = ({ fetchFunc, fetchData }) => {
     const [loader, setloader] = useState(false)
     const AllStoryWithUser = useCallback(  () => {
         setloader(true)
-        fetch(`http://68.183.178.196/getStoryPopularByCommunity/${communityID}?show=` +fetchData )
+        fetch(`http://68.183.178.196/api//getStoryPopularByCommunity/${communityID}?show=` +fetchData )
             .then(res => res.json())
             .then(data => {
                 setloader(true)
@@ -38,7 +38,7 @@ const PopularCom = ({ fetchFunc, fetchData }) => {
                         <div className="related-articles-box">
                         <div className="image-holder">
                                 {story.post_thumbnail ?
-                                        <img src={`http://68.183.178.196/${story.post_thumbnail}`} alt="postImage" className="img-fluid content-image cropped" /> :
+                                        <img src={`http://68.183.178.196/api//${story.post_thumbnail}`} alt="postImage" className="img-fluid content-image cropped" /> :
                                         <img src={require(`../../../images/com/${story.community_id}.png`).default} alt="postImage" className="img-fluid content-image" />}
                                 </div>
                             <div className="text-box">

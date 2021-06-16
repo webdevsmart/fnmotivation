@@ -8,7 +8,7 @@ const NotificationStoryFollower = ( ) => {
     const [follower, setFollower] = useState([])
     
     const getUserFollower = useCallback(  () => {
-        fetch('http://68.183.178.196/getUserFollower?id=' + userID)
+        fetch('http://68.183.178.196/api//getUserFollower?id=' + userID)
             .then(res => res.json())
             .then(data => {
                 setFollower(data)
