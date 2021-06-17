@@ -45,7 +45,18 @@ const SocialModalStory = ({ handleClose, open, title }) => {
                     <div className={classes.paper}>
                         <div>
                             <h3>Share This Post</h3>
-                            <FacebookShareButton className="mt-3" url={url} appid={182933076457767}>
+                            <FacebookShareButton 
+                                className="mt-3" 
+                                url={url} 
+                                appid={182933076457767}
+                                quote={"This is post Title"}
+                                image={
+                                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                                }
+                                imageURL={
+                                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+                                }
+                            >
                                 <FacebookIcon size={50} round={true} />
                             </FacebookShareButton>
                             <TwitterShareButton className="ml-2"
